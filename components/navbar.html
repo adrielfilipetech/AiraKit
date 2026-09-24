@@ -1,28 +1,29 @@
 <!-- Navbar -->
-    <nav class="navbar">
-        <div class="board p3 left bb">
-            <div class="row" style="align-items: center; width: 100%;">
-                <div class="icon">
-                    <img src="static/icons/ui/menu.svg" alt="menu" onclick="clickMenu()" class="navbar-toggle">
-                </div>
-                <div class="navbar-logo m3">
-                    <img src="static/img/logo-complete.svg" alt="AiraKit" class="ui-icon">
-                </div>
-                <div class="navbar-actions">
-                    <button class="btn-theme" onclick="toggleTheme(this)">
-                        <span class="theme-icon">🌙</span>
-                        <span class="theme-label">Dark</span>
-                    </button>
-                </div>
+<nav class="navbar">
+    <div class="board p3 left bb">
+        <div class="row" style="align-items: center; width: 100%;">
+            <div class="icon">
+                <img src="/static/icons/ui/menu.svg" alt="menu" class="navbar-toggle">
+            </div>
+            <div class="navbar-logo m3">
+                <img src="/static/img/logo-complete.svg" alt="AiraKit" class="ui-icon">
+            </div>
+            <div class="navbar-actions">
+                <button class="btn-theme" onclick="toggleTheme(this)">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-label">Dark</span>
+                </button>
             </div>
         </div>
+    </div>
 
-        <menu id="itensMenu" class="text-center pt1 pb1">
-            <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="assets-&-icons.html">Assets & icons</a></li>
-                <li><a href="contribute.html">Contribute</a></li>
-                <li><a href="examples.html">Examples</a></li>
-            </ul>
-        </menu>
-    </nav>
+    <menu id="itensMenu" class="text-center pt1 pb1">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/assets-&-icons.html">Assets & icons</a></li>
+            <li><a href="/pages/documentation.html">Documentation</a></li>
+            <li><a href="/pages/examples.html">Examples</a></li>
+            <li><a href="/pages/contribute.html">Contribute</a></li>
+        </ul>
+    </menu>
+</nav>

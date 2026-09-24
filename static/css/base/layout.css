@@ -1,0 +1,430 @@
+/* ============================================
+   AiraKit — Layout
+   Page structure and documentation-site pieces
+   (index, assets-&-icons, examples).
+   Not part of the distributable kit.
+   Requires: tokens.css, base.css
+   ============================================ */
+
+/* ==========================================
+   PAGE STRUCTURE
+   ========================================== */
+
+/* ------------------------------------------
+   Page sections
+   ------------------------------------------ */
+.section {
+  flex: 1;
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.75rem;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.section > p {
+  font-size: 1rem;
+  opacity: 0.65;
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* ------------------------------------------
+   Page hero (inner pages)
+   ------------------------------------------ */
+.page-hero {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+  font-size: 1rem;
+  opacity: 0.6;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ------------------------------------------
+   Divider
+   ------------------------------------------ */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-outline);
+  margin: 0;
+}
+
+/* ------------------------------------------
+   Hero (home)
+   ------------------------------------------ */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 520px;
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-outline);
+  opacity: 0.7;
+}
+/* ------------------------------------------
+   Compatibility section (home)
+   ------------------------------------------ */
+.compat-section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.compat-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 0.75rem;
+}
+
+.compat-section > p {
+  opacity: 0.6;
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.compat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------
+   Download section (home)
+   ------------------------------------------ */
+.download-section {
+  padding: 5rem 2rem;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.download-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 0.75rem;
+}
+
+.download-section > p {
+  opacity: 0.6;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.download-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------
+   Page wrappers and grids
+   ------------------------------------------ */
+.assets-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.examples-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.75rem;
+}
+
+.colors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* ==========================================
+   DOCUMENTATION SHOWCASE PIECES
+   (show the kit; not part of the kit)
+   ========================================== */
+
+/* ------------------------------------------
+   Feature card (home)
+   ------------------------------------------ */
+.feature-card {
+  border: 1px solid var(--color-outline);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feature-card .icon-wrap { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.feature-card h3 { font-size: 1rem; font-weight: 600; }
+.feature-card p  { font-size: 0.875rem; opacity: 0.6; line-height: 1.6; }
+
+/* ------------------------------------------
+   Compat item (home)
+   ------------------------------------------ */
+.compat-item {
+  border: 1px solid var(--color-outline);
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* ------------------------------------------
+   Download box (home)
+   ------------------------------------------ */
+.download-box {
+  border: 1px solid var(--color-outline);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.download-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--color-outline);
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.download-box-dots { display: flex; gap: 6px; }
+.download-box-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-outline);
+  display: inline-block;
+}
+
+.download-box pre {
+  padding: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.download-box code { font-family: 'Courier New', monospace; }
+
+/* ------------------------------------------
+   Asset section header (assets page)
+   ------------------------------------------ */
+.asset-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.asset-section-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.asset-section-header span {
+  font-size: 12px;
+  opacity: 0.4;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------
+   Icon card (assets page)
+   ------------------------------------------ */
+.icon-card {
+  border: 1px solid var(--color-outline);
+  border-radius: 10px;
+  padding: 1.25rem 0.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.icon-card:hover { background: var(--color-outline); }
+
+.icon-card img { width: 24px; height: 24px; }
+
+.icon-card-name {
+  font-size: 10px;
+  opacity: 0.5;
+  text-align: center;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.icon-card .copy-hint {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 9px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.icon-card:hover .copy-hint { opacity: 0.4; }
+
+.icon-card.copied { border-color: #22c55e; }
+
+.icon-card.copied .copy-hint { opacity: 1; color: #22c55e; }
+
+/* ------------------------------------------
+   Color card (assets page)
+   ------------------------------------------ */
+.color-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 100px;
+}
+
+.color-swatch {
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid var(--color-outline);
+}
+
+.color-info { display: flex; flex-direction: column; gap: 2px; }
+
+.color-name { font-size: 11px; font-weight: 600; opacity: 0.7; }
+
+.color-var {
+  font-size: 10px;
+  opacity: 0.4;
+  font-family: 'Courier New', monospace;
+}
+
+/* ------------------------------------------
+   Component showcase (assets page)
+   ------------------------------------------ */
+.btn-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-item-label {
+  font-size: 11px;
+  opacity: 0.45;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}

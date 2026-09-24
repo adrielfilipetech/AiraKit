@@ -1,0 +1,126 @@
+/* ============================================
+   AiraKit — Design Tokens
+   Load this file FIRST
+   ============================================ */
+
+:root {
+  color-scheme: light dark;
+
+  /* ------------------------------------------
+     Colors that change by theme
+     ------------------------------------------ */
+
+  /* Background */
+  --color-bg-start:           light-dark(#f5f5f5, #0E0E11);
+  --color-bg-end:             light-dark(#cacaca, #0E0E11);
+  --color-bg:                 linear-gradient(180deg, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+  --color-bg-subtle:          light-dark(#F5F5F7, #16161A);
+  --color-surface:            light-dark(#EBEBEF, #1E1E24);
+
+  /* Borders */
+  --color-border:             light-dark(#D1D1DB, #2A2A35);
+  --color-outline:            light-dark(#adadad, #626262);
+
+  /* Text */
+  --color-text:               light-dark(#1A1A2E, #E8E8F0);
+  --color-text-muted:         #6B6B80;
+  --color-highlight-text:     light-dark(#FFFFFF, #000000);
+  --color-bg-highlight-text:  light-dark(#3A3A46, #C7C7CC);
+
+  /* Links */
+  --color-link:               light-dark(#1a73e8, #8ab4f8);
+
+  /* Brand */
+  --color-primary:            light-dark(#5B4EFF, #7B68EE);
+  --color-primary-hover:      light-dark(#4A3EDD, #9B8FFF);
+
+  /* Secondary button */
+  --color-btn-sec-bg:         light-dark(#f0f0f0, #2a2a2a);
+  --color-btn-sec-bg-hover:   light-dark(#e0e0e0, #3a3a3a);
+  --color-btn-sec-text:       light-dark(#333333, #eeeeee);
+
+  /* Disabled button */
+  --color-btn-dis-bg:         light-dark(#cccccc, #2a2a2a);
+  --color-btn-dis-text:       light-dark(#888888, #555555);
+
+  /* Header / Footer */
+  --color-header-bg:          light-dark(#FAFAFA, #1f1f1f);
+  --color-footer-text:        light-dark(#666666, #aaaaaa);
+
+  /* Icons */
+  --icon-color:               light-dark(#000000, #ffffff);
+
+  /* Shadows */
+  --shadow-color-sm:          light-dark(rgba(0,0,0,0.08), rgba(0,0,0,0.3));
+  --shadow-color-md:          light-dark(rgba(0,0,0,0.10), rgba(0,0,0,0.4));
+  --shadow-sm:                0 1px 3px var(--shadow-color-sm);
+  --shadow-md:                0 4px 12px var(--shadow-color-md);
+
+  /* ------------------------------------------
+     Colors shared across both themes
+     ------------------------------------------ */
+
+  /* Primary button */
+  --color-btn-act-bg:         linear-gradient(180deg, #376af8 0%, #0c48ef 100%);
+  --color-btn-act-bg-hover:   linear-gradient(180deg, #0c48ef 0%, #5e88fb 100%);
+  --color-btn-text:           #ffffff;
+
+  /* Destructive button */
+  --color-btn-del-bg:         linear-gradient(180deg, #fb5e5e 0%, #ef0c0c 100%);
+  --color-btn-del-bg-hover:   linear-gradient(180deg, #ef0c0c 0%, #f83737 100%);
+
+  /* Feedback */
+  --color-success:            #22C55E;
+  --color-warning:            #F59E0B;
+  --color-danger:             #EF4444;
+  --color-info:               #3B82F6;
+
+  /* Typography */
+  --font-body:                'Inter', sans-serif;
+  --font-size-sm:             13px;
+  --font-size-md:             15px;
+  --font-size-lg:             18px;
+
+  /* Spacing */
+  --space-xs:                 4px;
+  --space-sm:                 8px;
+  --space-md:                 16px;
+  --space-lg:                 24px;
+  --space-xl:                 40px;
+
+  /* Border radius */
+  --radius-sm:                4px;
+  --radius-md:                8px;
+  --radius-lg:                16px;
+  --radius-full:              999px;
+
+  /* Transitions */
+  --transition:               0.2s ease;
+
+  /* Forms */
+  --form-radius:              var(--radius-md);
+  --form-border:              var(--color-outline);
+  --form-border-focus:        var(--color-primary);
+  --form-bg:                  transparent;
+  --form-text:                var(--color-text);
+  --form-placeholder:         var(--color-text-muted);
+  --form-padding-y:           10px;
+  --form-padding-x:           14px;
+  --form-font-size:           var(--font-size-md);
+  --form-transition:          border-color var(--transition), box-shadow var(--transition);
+  --form-focus-ring-color:    light-dark(rgba(91, 78, 255, 0.15), rgba(123, 104, 238, 0.2));
+  --form-shadow-focus:        0 0 0 3px var(--form-focus-ring-color);
+  --form-label-size:          13px;
+  --form-label-weight:        500;
+  --form-gap:                 6px;
+  --form-hint-size:           12px;
+}
+
+  /* ------------------------------------------
+     Manual preference (set via data-theme)
+     Only switches the color scheme; values come from
+     the light-dark() above.
+      ------------------------------------------ */
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
