@@ -1,15 +1,3 @@
-/* --------------------------------------------
-   Accordion
-   contributes, index, assets & icons usa esse arquivo
-   tenho que verificar se eles usam de fato.
-   isso da pra jogar no chat ou no claude e pedir pra eles verificarem rapidamente
-   accordion, carrousel, checkbox, toast
-   contributes, index, nao usa nenhum. 
-   Só assets & icons referencia ele.
-
-   components.js tem poucos componentes, mas o components.css tem uma caralhada de componente
-   e ai? onde estao os componentes que foram definidos nele?
-   -------------------------------------------- */
 /* ============================================================
    UI Toolkit: comportamento dos componentes
    ============================================================ */
@@ -155,13 +143,12 @@ function initCarousel() {
     goToSlide(0);
 }
 
-
 /* --------------------------------------------
    Checkbox
    --------------------------------------------
-   Alterna entre dois SVGs (marcado / desmarcado)
-   conforme o estado do input.
-   Estrutura esperada:
+   Switches between two SVGs (checked / unchecked)
+   depending on the input state.
+   Expected structure:
    .checkbox-wrap
      input[type="checkbox"]
      .checkbox-icon > .svg-check + .svg-uncheck
@@ -201,4 +188,3 @@ function initCheckboxes() {
 initAccordions();
 initCarousel();
 initCheckboxes();
-// A query busca inputs do tipo checkbox, que tenham alguma tag/div acima que seja do tipo checkbox-wrap
