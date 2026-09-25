@@ -75,6 +75,21 @@
   --color-danger:             #EF4444;
   --color-info:               #3B82F6;
 
+  /* Feedback state colors (alert / badge-kit / toast-kit) */
+  --feedback-info-bg:         light-dark(#eff6ff, #0d1f3c);
+  --feedback-info-text:       light-dark(#1d4ed8, #93c5fd);
+  --feedback-info-border:     light-dark(#bfdbfe, #1e3a5f);
+  --feedback-success-bg:      light-dark(#f0fdf4, #052e16);
+  --feedback-success-text:    light-dark(#15803d, #4ade80);
+  --feedback-success-border:  light-dark(#bbf7d0, #166534);
+  --feedback-warning-bg:      light-dark(#fffbeb, #271900);
+  --feedback-warning-text:    light-dark(#92400e, #fbbf24);
+  --feedback-warning-border:  light-dark(#fde68a, #78350f);
+  --feedback-error-bg:        light-dark(#fef2f2, #2d0000);
+  --feedback-error-text:      light-dark(#b91c1c, #f87171);
+  --feedback-error-border:    light-dark(#fecaca, #7f1d1d);
+  --badge-kit-solid-text:     light-dark(var(--color-bg-subtle), #0E0E11);
+
   /* Typography */
   --font-body:                'Inter', sans-serif;
   --font-size-sm:             13px;
