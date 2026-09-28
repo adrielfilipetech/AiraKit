@@ -542,3 +542,68 @@
   text-transform: uppercase;
   font-weight: 500;
 }
+
+
+/* ------------------------------------------
+   Documentation
+   ------------------------------------------ */
+
+/* ------------------------------------------
+   Intro / description text under a section
+   header (pairs with .mb2 / .mb3 / .mt3 from
+   base.css for spacing)
+   ------------------------------------------ */
+.asset-note {
+  font-size: 1rem;
+  opacity: 0.65;
+  line-height: 1.7;
+}
+
+/* ------------------------------------------
+   Sub-header inside an .asset-section, used to
+   break a section into smaller groups (e.g.
+   "Input", "Select", "Textarea" under Form
+   Components) without the full section-header
+   border/spacing
+   ------------------------------------------ */
+.asset-section-header--plain {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.asset-subheading {
+  font-size: 0.875rem;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+/* ------------------------------------------
+   Grouping wrappers
+   ------------------------------------------ */
+.component-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.showcase-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ------------------------------------------
+   Modifiers
+   ------------------------------------------ */
+.btn-item--start {
+  align-items: flex-start;
+  width: 100%;
+}
+
+.field--full {
+  width: 100%;
+}

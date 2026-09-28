@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base/base.css">
+    <link rel="stylesheet" href="/static/css/base/tokens.css">
+    <link rel="stylesheet" href="/static/css/base/layout.css">
+
+    <link rel="stylesheet" href="/static/css/components/components.css">
+
+    <link rel="icon" href="/static/img/logo-icon.svg">
+    <script src="/static/js/main.js" type="text/javascript" defer></script>
+    <script src="/static/js/components.js" type="text/javascript" defer></script>
+    <script src="/static/js/toast.js" type="text/javascript" defer></script>
+    <title>Usage Examples — AiraKit</title>
+</head>
+
+<body>
+    <aira-navbar></aira-navbar>
+
+    <main class="main-cont">
+        <div class="page-hero">
+            <p class="section-label">Guide</p>
+            <h1>Usage Examples</h1>
+        </div>
+
+        <div class="assets-wrapper">
+
+            <!-- ============================================
+                 SETUP — the 3 core files
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Setup</h2>
+                    <span>3 core files</span>
+                </div>
+                <p class="asset-note mb3">
+                    Every project that uses AiraKit — regardless of framework — must always load these
+                    three files, in this order:
+                </p>
+
+                <p class="asset-note mb3">
+                    tokens.css -> base.css -> main.js
+                </p>
+                <div class="download-box mb3">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>index.html — &lt;head&gt;</span>
+                    </div>
+                    <pre><code>
+                            &lt;/head&gt;
+                            &lt;link rel="stylesheet" href="/static/css/base/tokens.css"&gt;
+                            &lt;link rel="stylesheet" href="/static/css/base/base.css"&gt;
+                            &lt;script src="/static/js/main.js" defer&gt;&lt;/script&gt;
+                            &lt;/head&gt;
+                        </code></pre>
+                </div>
+                <p class="asset-note mt3 mb3">
+                    <strong>Tokens.css:</strong> Color scheme, spacing, radii and typography for the whole kit and every
+                    component.
+                </p>
+
+                <p class="asset-note mt3 mb3">
+                    <strong>Base.css:</strong> Reset, base typography and the base HTML structure (content grid, flex
+                    utilities, spacing helpers). Depends on tokens.css.
+                </p>
+
+                <p class="asset-note mt3 mb3">
+                    <strong>Main.js:</strong> Defines and switches the theme (light/dark), and injects the
+                    <code>&lt;aira-navbar&gt;</code> / <code>&lt;aira-footer&gt;</code> web components.
+                </p>
+
+                <br>
+                <div class="asset-section-header">
+                    <h2>Base html structure</h2>
+                    <span>navbar · main · footer</span>
+                </div>
+                <p class="asset-note mb3">
+                    Every page follows the same 3-part skeleton inside the <code>&lt;body&gt;</code> tag:
+                    <strong>Navbar</strong> - <strong>Main</strong> - <strong>Footer</strong>
+                </p>
+                <p class="asset-note mb3">
+                    Each piece is independent — a page can drop the navbar, the footer, or both, and the layout
+                    still holds, since the <code>&lt;main&gt;</code> tag with <code>.main-cont</code> attribute always
+                    stretches to fill
+                    whatever space is left.
+                </p>
+                <p class="asset-note mt3 mb3">
+                    <strong>&lt;aira-navbar&gt;:</strong> Injected by <code>main.js</code>. Fixed at the top of
+                    the page, holds the logo, the theme toggle and the nav links.
+                </p>
+                <p class="asset-note mt3 mb3">
+                    <strong>&lt;main class="main-cont"&gt;:</strong> Wraps the page's actual content. Grows to
+                    fill the remaining vertical space (<code>flex: 1</code>), pushing the footer to the bottom
+                    on short pages.
+                </p>
+                <p class="asset-note mt3 mb3">
+                    <strong>&lt;aira-footer&gt;:</strong> Injected by <code>main.js</code>. Sits at the bottom
+                    of the page with links and credits.
+                </p>
+                <div class="download-box mb3">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>index.html — &lt;body&gt;</span>
+                    </div>
+                    <pre><code>
+                            &lt;body&gt;
+                            &lt;aira-navbar&gt;&lt;/aira-navbar&gt;
+
+                            &lt;main class="main-cont"&gt;
+                            &lt;!-- page content --&gt;
+                            &lt;/main&gt;
+
+                            &lt;aira-footer&gt;&lt;/aira-footer&gt;
+                            &lt;/body&gt;
+                        </code></pre>
+                </div>
+
+                <br>
+                <div class="asset-section-header">
+                    <h2>Using components</h2>
+                </div>
+                <p class="asset-note mt3 mb3">
+                    To use the basic components always include <code>components.css</code> file.
+                </p>
+                <p class="asset-note mt3 mb3">
+                    Also make sure to include <code>components.js</code> when using accordions, carrousel, checkboxes,
+                    toggle buttons or
+                    <code>toast.js</code> for the toasts.
+                </p>
+
+                <div class="download-box">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>index.html — components layer (optional)</span>
+                    </div>
+                    <pre><code>
+                            &lt;/head&gt;
+                            &lt;link rel="stylesheet" href="/static/css/components/components.css"&gt;
+                            &lt;script src="/static/js/components.js" defer&gt;&lt;/script&gt;
+                            &lt;script src="/static/js/toast.js" defer&gt;&lt;/script&gt;
+                            &lt;/head&gt;
+                        </code></pre>
+                </div>
+            </div>
+            <!-- ============================================
+                 BUTTONS
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Buttons</h2>
+                    <span>5 variants</span>
+                </div>
+
+                <p class="asset-note mb3">
+                    Apply only one of the class names below the buttons to any <code>&lt;a&gt;</code> tag or
+                    <code>&lt;button&gt;</code> tag:
+                </p>
+
+                <div class="download-box">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>example</span>
+                    </div>
+                    <pre><code>
+                            &lt;a href="/get-started" class="btn_act"&gt;Get Started&lt;/a&gt;
+                            &lt;button class="btn_del" onclick="deleteItem()"&gt;Delete&lt;/button&gt;
+                        </code></pre>
+                </div>
+
+                <br>
+                <p class="asset-note mb3">
+                    Button variants
+                </p>
+                <div class="btn-showcase mb3">
+                    <div class="btn-item">
+                        <a class="btn_act">Primary</a>
+                        <span class="btn-item-label">.btn_act</span>
+                    </div>
+
+                    <div class="btn-item">
+                        <a class="btn_sec">Secondary</a>
+                        <span class="btn-item-label">.btn_sec</span>
+                    </div>
+
+                    <div class="btn-item">
+                        <a class="btn_out">Outline</a>
+                        <span class="btn-item-label">.btn_out</span>
+                    </div>
+
+                    <div class="btn-item">
+                        <a class="btn_del">Delete</a>
+                        <span class="btn-item-label">.btn_del</span>
+                    </div>
+
+                    <div class="btn-item">
+                        <span class="btn_dis">Disabled</span>
+                        <span class="btn-item-label">.btn_dis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 UI ICONS
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>UI Icons</h2>
+                    <span>19 icons</span>
+                </div>
+                <p>
+                </p>
+                <p class="asset-note mb3">
+                    Use icons with <code>&lt;img&gt;</code> from <code>/static/icons/ui/</code>. Icons automatically
+                    invert in dark mode. Do not use the <code>.logo</code> class or include <code>logo</code> in the
+                    filename, as either will prevent the icon from being inverted, unless it is intended. There are 19
+                    icons available. See the
+                    full list on the <a href="/pages/assets-&-icons.html">Assets &amp; Icons</a> page.
+                </p>
+                <div class="download-box">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>example</span>
+                    </div>
+                    <pre><code>&lt;img class="ui-icon" src="/static/icons/ui/download.svg" alt="download"&gt;</code>
+                    </pre>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 FORM COMPONENTS
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Form Components</h2>
+                    <span>4 components</span>
+                </div>
+
+                <div class="component-stack g1">
+
+                    <!-- Input -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Input</h2>
+                        </div>
+                        <div class="field-grid g3 mb3">
+                            <div class="btn-item btn-item--start">
+                                <div class="field field--full">
+                                    <label class="field-label">Email</label>
+                                    <input class="input" type="text" placeholder="you@example.com" />
+                                    <span class="field-hint">We'll never share your email.</span>
+                                </div>
+                                <span class="btn-item-label">default</span>
+                            </div>
+                            <div class="btn-item btn-item--start">
+                                <div class="field field--full">
+                                    <label class="field-label">Email</label>
+                                    <input class="input error" type="text" value="not-an-email" />
+                                    <span class="field-hint error">Enter a valid email address.</span>
+                                </div>
+                                <span class="btn-item-label">.error</span>
+                            </div>
+                            <div class="btn-item btn-item--start">
+                                <div class="field field--full">
+                                    <label class="field-label">Email</label>
+                                    <input class="input success" type="text" value="you@example.com" />
+                                    <span class="field-hint">Looks good!</span>
+                                </div>
+                                <span class="btn-item-label">.success</span>
+                            </div>
+                        </div>
+
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example</span>
+                            </div>
+                            <pre><code>
+                                    &lt;div class="field"&gt;
+                                    &lt;label class="field-label"&gt;Email&lt;/label&gt;
+                                    &lt;input class="input" type="text" placeholder="you@example.com" /&gt;
+                                    &lt;span class="field-hint"&gt;We'll never share your email.&lt;/span&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;!-- validation states: add .error or .success to .input --&gt;
+                                    &lt;div class="field"&gt;
+                                    &lt;label class="field-label"&gt;Email&lt;/label&gt;
+                                    &lt;input class="input error" type="text" value="not-an-email" /&gt;
+                                    &lt;span class="field-hint error"&gt;Enter a valid email address.&lt;/span&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class="field"&gt;
+                                    &lt;label class="field-label"&gt;Email&lt;/label&gt;
+                                    &lt;input class="input success" type="text" value="you@example.com" /&gt;
+                                    &lt;span class="field-hint"&gt;Looks good!&lt;/span&gt;
+                                    &lt;/div&gt;
+                                </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Select -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Select</h2>
+                        </div>
+                        <div class="field-grid g3 mb3">
+                            <div class="btn-item btn-item--start">
+                                <div class="field field--full">
+                                    <label class="field-label">Country select example</label>
+                                    <div class="select-wrap">
+                                        <select class="select">
+                                            <option value="" disabled selected>Choose an option</option>
+                                            <option>Brazil</option>
+                                            <option>Portugal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example</span>
+                            </div>
+                            <pre><code>&lt;div class="field"&gt;
+                                    &lt;label class="field-label"&gt;Country&lt;/label&gt;
+                                    &lt;div class="select-wrap"&gt;
+                                    &lt;select class="select"&gt;
+                                    &lt;option value="" disabled selected&gt;Choose an option&lt;/option&gt;
+                                    &lt;option&gt;Brazil&lt;/option&gt;
+                                    &lt;option&gt;Portugal&lt;/option&gt;
+                                    &lt;/select&gt;
+                                    &lt;/div&gt;
+                                    &lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Text Area</h2>
+                        </div>
+                        <div class="field-grid g3 mb3">
+                            <div class="btn-item btn-item--start">
+                                <div class="field field--full">
+                                    <label class="field-label">Text area example</label>
+                                    <textarea class="textarea" placeholder="Write something…"></textarea>
+                                    <span class="field-hint">Maximum 300 characters.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example</span>
+                            </div>
+                            <pre><code>&lt;div class="field"&gt;
+                                    &lt;label class="field-label"&gt;Message&lt;/label&gt;
+                                    &lt;textarea class="textarea" placeholder="Write something…"&gt;&lt;/textarea&gt;
+                                    &lt;span class="field-hint"&gt;Maximum 300 characters.&lt;/span&gt;
+                                    &lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Checkbox</h2>
+                        </div>
+                        <p class="asset-note mb3">
+                            Checking/unchecking works natively via the <code>&lt;input type="checkbox"&gt;</code>. The
+                            icon swap between states is handled by the existing JS logic (via <code>data-for</code>) —
+                            just reuse the markup structure below.
+                        </p>
+                        <div style="display: flex; gap: 2.5rem;">
+
+                            <div class="btn-item btn-item--start">
+                                <label class="checkbox-wrap">
+                                    <input type="checkbox" id="chk-terms" />
+
+                                    <span class="checkbox-icon" data-for="chk-terms">
+                                        <svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25">
+                                            <use href="/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"></use>
+                                        </svg>
+
+                                        <svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
+                                            style="display:none;">
+                                            <use href="/static/icons/ui/checkbox-checked.svg#checkbox-checked"></use>
+                                        </svg>
+                                    </span>
+
+                                    <span class="checkbox-label">Example checkbox</span>
+                                </label>
+                            </div>
+
+                            <div class="btn-item btn-item--start">
+                                <label class="checkbox-wrap disabled">
+                                    <input type="checkbox" id="chk-terms-disabled" disabled />
+
+                                    <span class="checkbox-icon" data-for="chk-terms-disabled">
+                                        <svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25">
+                                            <use href="/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"></use>
+                                        </svg>
+
+                                        <svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
+                                            style="display:none;">
+                                            <use href="/static/icons/ui/checkbox-checked.svg#checkbox-checked"></use>
+                                        </svg>
+                                    </span>
+
+                                    <span class="checkbox-label">Example checkbox (disabled)</span>
+                                </label>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example (structure)</span>
+                            </div>
+                            <pre><code>
+                                    &lt;label class="checkbox-wrap"&gt;
+                                    &lt;input type="checkbox" id="chk-terms" /&gt;
+                                    &lt;span class="checkbox-icon" data-for="chk-terms"&gt;
+                                    &lt;svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
+                                    style="display:none;"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/checkbox-checked.svg#checkbox-checked"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;/span&gt;
+                                    &lt;span class="checkbox-label"&gt;Example checkbox&lt;/span&gt;
+                                    &lt;/label&gt;
+                                </code></pre>
+                        </div>
+                        <br>
+                        <p class="asset-note mb3">
+                            Disabled checkbox example:
+                        </p>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example (disabled)</span>
+                            </div>
+                            <pre><code>
+                                    &lt;label class="checkbox-wrap disabled"&gt;
+                                    &lt;input type="checkbox" id="chk-terms-disabled" disabled /&gt;
+                                    &lt;span class="checkbox-icon" data-for="chk-terms-disabled"&gt;
+                                    &lt;svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
+                                    style="display:none;"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/checkbox-checked.svg#checkbox-checked"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;/span&gt;
+                                    &lt;span class="checkbox-label"&gt;Example checkbox (disabled)&lt;/span&gt;
+                                    &lt;/label&gt;
+                                </code></pre>
+                        </div>
+                        <br>
+                    </div>
+                    <!-- Toggle -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Toggle</h2>
+                        </div>
+                        <p class="asset-note mb3">
+                            On/off works natively via the <code>&lt;input type="checkbox"&gt;</code>. The
+                            icon swap between states is handled by the existing JS logic (via <code>data-for</code>) —
+                            just reuse the markup structure below.
+                        </p>
+                        <div style="display: flex; gap: 2.5rem;">
+
+                            <div class="btn-item btn-item--start">
+                                <label class="toggle-wrap">
+                                    <input type="checkbox" id="tgl-notifications" />
+
+                                    <span class="toggle-icon" data-for="tgl-notifications">
+                                        <svg class="svg-off" width="30" height="30" viewBox="0 0 25 25">
+                                            <use href="/static/icons/ui/toggle-off.svg#toggle-off"></use>
+                                        </svg>
+
+                                        <svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
+                                            style="display:none;">
+                                            <use href="/static/icons/ui/toggle-on.svg#toggle-on"></use>
+                                        </svg>
+                                    </span>
+
+                                    <span class="toggle-label">Example toggle</span>
+                                </label>
+                            </div>
+
+                            <div class="btn-item btn-item--start">
+                                <label class="toggle-wrap disabled">
+                                    <input type="checkbox" id="tgl-notifications-disabled" disabled />
+
+                                    <span class="toggle-icon" data-for="tgl-notifications-disabled">
+                                        <svg class="svg-off" width="30" height="30" viewBox="0 0 25 25">
+                                            <use href="/static/icons/ui/toggle-off.svg#toggle-off"></use>
+                                        </svg>
+
+                                        <svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
+                                            style="display:none;">
+                                            <use href="/static/icons/ui/toggle-on.svg#toggle-on"></use>
+                                        </svg>
+                                    </span>
+
+                                    <span class="toggle-label">Example toggle (disabled)</span>
+                                </label>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example (structure)</span>
+                            </div>
+                            <pre><code>
+                                    &lt;label class="toggle-wrap"&gt;
+                                    &lt;input type="checkbox" id="tgl-notifications" /&gt;
+                                    &lt;span class="toggle-icon" data-for="tgl-notifications"&gt;
+                                    &lt;svg class="svg-off" width="30" height="30" viewBox="0 0 25 25"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/toggle-off.svg#toggle-off"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
+                                    style="display:none;"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/toggle-on.svg#toggle-on"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;/span&gt;
+                                    &lt;span class="toggle-label"&gt;Example toggle&lt;/span&gt;
+                                    &lt;/label&gt;
+                                </code></pre>
+                        </div>
+                        <br>
+                        <p class="asset-note mb3">
+                            Disabled toggle example:
+                        </p>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example (disabled)</span>
+                            </div>
+                            <pre><code>
+                                    &lt;label class="toggle-wrap disabled"&gt;
+                                    &lt;input type="checkbox" id="tgl-notifications-disabled" disabled /&gt;
+                                    &lt;span class="toggle-icon" data-for="tgl-notifications-disabled"&gt;
+                                    &lt;svg class="svg-off" width="30" height="30" viewBox="0 0 25 25"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/toggle-off.svg#toggle-off"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
+                                    style="display:none;"&gt;
+                                    &lt;use
+                                    href="/static/icons/ui/toggle-on.svg#toggle-on"&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;
+                                    &lt;/span&gt;
+                                    &lt;span class="toggle-label"&gt;Example toggle (disabled)&lt;/span&gt;
+                                    &lt;/label&gt;
+                                </code></pre>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================
+                 ACCORDION
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Accordion</h2>
+                    <span>2 variants</span>
+                </div>
+
+                <div class="component-stack g1">
+
+                    <!-- Single -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Single</h2>
+                        </div>
+                        <div class="btn-item btn-item--start mb3">
+                            <div class="accordion field--full">
+                                <div class="accordion-item">
+                                    <button class="accordion-trigger" aria-expanded="true">
+                                        <span>What is an accordion?</span>
+                                        <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        <div class="accordion-content">
+                                            <p>A vertically stacked list of items where each one can be
+                                                expanded or collapsed to reveal its content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-trigger" aria-expanded="false">
+                                        <span>What is the default behavior for the variant type 'single'?</span>
+                                        <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        <div class="accordion-content">
+                                            <p>Opening one item automatically closes any other open item.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example</span>
+                            </div>
+                            <pre><code>&lt;div class="accordion"&gt;
+                                    &lt;div class="accordion-item"&gt;
+                                    &lt;button class="accordion-trigger" aria-expanded="false"&gt;
+                                    &lt;span&gt;What is AiraKit?&lt;/span&gt;
+                                    &lt;svg class="accordion-icon" ...&gt;&lt;polyline points="6 9 12 15 18 9"
+                                    /&gt;&lt;/svg&gt;
+                                    &lt;/button&gt;
+                                    &lt;div class="accordion-body"&gt;
+                                    &lt;div class="accordion-content"&gt;
+                                    &lt;p&gt;A lightweight design kit — no build tools required.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- repeat .accordion-item for each entry --&gt;
+                                    &lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Multi -->
+                    <div>
+                        <div class="asset-section-header asset-section-header--plain mb3">
+                            <h2 class="asset-subheading">Multiple accordions</h2>
+                        </div>
+                        <p class="asset-note mb3">
+                            Add <code>.accordion--multi</code> to allow several items open simultaneously.
+                        </p>
+                        <div class="btn-item btn-item--start mb3">
+                            <div class="accordion accordion--multi field--full">
+                                <div class="accordion-item">
+                                    <button class="accordion-trigger" aria-expanded="true">
+                                        <span>Can I open multiple?</span>
+                                        <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        <div class="accordion-content">
+                                            <p>Yes! Add <code>.accordion--multi</code> to allow multiple items
+                                                open at once.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-trigger" aria-expanded="false">
+                                        <span>How does it animate?</span>
+                                        <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </button>
+                                    <div class="accordion-body">
+                                        <div class="accordion-content">
+                                            <p>Via a <code>grid-template-rows</code> transition — smooth and
+                                                performant.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-box">
+                            <div class="download-box-header">
+                                <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                <span>example</span>
+                            </div>
+                            <pre><code>&lt;div class="accordion accordion--multi"&gt;
+                                    &lt;div class="accordion-item"&gt;
+                                    &lt;button class="accordion-trigger" aria-expanded="true"&gt;
+                                    &lt;span&gt;Can I open multiple?&lt;/span&gt;
+                                    &lt;svg class="accordion-icon" ...&gt;&lt;polyline points="6 9 12 15 18 9"
+                                    /&gt;&lt;/svg&gt;
+                                    &lt;/button&gt;
+                                    &lt;div class="accordion-body"&gt;
+                                    &lt;div class="accordion-content"&gt;
+                                    &lt;p&gt;Yes! Add .accordion--multi to allow multiple items open at once.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- repeat .accordion-item for each entry --&gt;
+                                    &lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================
+                 CAROUSEL
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Carousel</h2>
+                    <span>1 variant</span>
+                </div>
+                <p class="asset-note mb3">
+                    Use the ids exactly as shown — <code>carousel-demo</code> and <code>carousel-demo-dots</code> — and
+                    leave the dots container empty; the dots are added automatically. Only one carousel per page is
+                    supported. Arrows and dragging/swiping work right out of the box. File <code>components.js</code>
+                    required.
+                </p>
+                <div class="mb3">
+                    <div class="carousel" id="carousel-demo">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <div class="carousel-slide-inner">
+                                    <span class="carousel-slide-num">01</span>
+                                    <p>Drag or use the arrows to navigate between slides.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="carousel-slide-inner">
+                                    <span class="carousel-slide-num">02</span>
+                                    <p>Works with any content — images, cards, text.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="carousel-slide-inner">
+                                    <span class="carousel-slide-num">03</span>
+                                    <p>Dots update automatically as you navigate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-btn--next" aria-label="Next">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                        <div class="carousel-dots" id="carousel-demo-dots"></div>
+                    </div>
+                </div>
+                <div class="download-box">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>example</span>
+                    </div>
+                    <pre><code>&lt;div class="carousel" id="carousel-demo"&gt;
+                            &lt;div class="carousel-track"&gt;
+                            &lt;div class="carousel-slide"&gt;&lt;div class="carousel-slide-inner"&gt;
+                            &lt;span class="carousel-slide-num"&gt;01&lt;/span&gt;
+                            &lt;p&gt;Slide content goes here.&lt;/p&gt;
+                            &lt;/div&gt;&lt;/div&gt;
+                            &lt;!-- repeat .carousel-slide for each slide --&gt;
+                            &lt;/div&gt;
+                            &lt;button class="carousel-btn carousel-btn--prev"
+                            aria-label="Previous"&gt;...&lt;/button&gt;
+                            &lt;button class="carousel-btn carousel-btn--next" aria-label="Next"&gt;...&lt;/button&gt;
+                            &lt;!-- leave empty — components.js fills this with .carousel-dot buttons --&gt;
+                            &lt;div class="carousel-dots" id="carousel-demo-dots"&gt;&lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 TOAST
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Toast</h2>
+                    <span>4 variants</span>
+                </div>
+                <p class="asset-note mb3">
+                    Add the first div as shown below. It can be anywhere in the file (inside
+                    the <code>&lt;/main&gt;</code> tag will do). Then add a button with the onClick method
+                    <code>showToastKit(message, variant)</code>.
+                </p>
+                <p class="asset-note mb3">
+                    Important note: The `toast-kit` class is used for styling, while the `toast-kit` ID is used by
+                    `toast.js` to locate the div.
+
+                </p>
+                <div class="download-box">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>example</span>
+                    </div>
+                    <pre><code>&lt;!-- once per page --&gt;
+                            &lt;div class="toast-kit" id="toast-kit" role="status" aria-live="polite"&gt;&lt;/div&gt;
+
+                            &lt;!-- anywhere in your JS --&gt;
+                            &lt;button class="btn_out" onclick="showToastKit('Action completed!', 'success')"&gt;
+                            Save
+                            &lt;/button&gt;</code></pre>
+                </div>
+
+                <br>
+                <p class="asset-note mb3">
+                    Toast variants (click to see the effects):
+                </p>
+                <div class="btn-showcase mb3">
+                    <div class="btn-item">
+                        <button class="btn_out" onclick="showToastKit('Default message', 'default')">Default</button>
+                        <span class="btn-item-label">'default'</span>
+                    </div>
+                    <div class="btn-item">
+                        <button class="btn_out" onclick="showToastKit('Action completed!', 'success')">Success</button>
+                        <span class="btn-item-label">'success'</span>
+                    </div>
+                    <div class="btn-item">
+                        <button class="btn_out" onclick="showToastKit('Something went wrong.', 'error')">Error</button>
+                        <span class="btn-item-label">'error'</span>
+                    </div>
+                    <div class="btn-item">
+                        <button class="btn_out"
+                            onclick="showToastKit('Heads up — check this.', 'warning')">Warning</button>
+                        <span class="btn-item-label">'warning'</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 BADGES
+                 ============================================ -->
+            <div class="asset-section">
+                <div class="asset-section-header">
+                    <h2>Badge</h2>
+                    <span>8 variants</span>
+                </div>
+                <p class="asset-note mb3">
+                    Base class plus a modifier. Combine <code>--dot</code> with a color modifier
+                    (e.g. <code>--dot --success</code>) for a status indicator.
+                </p>
+                <div class="download-box">
+                    <div class="download-box-header">
+                        <div class="download-box-dots"><span></span><span></span><span></span></div>
+                        <span>example</span>
+                    </div>
+                    <pre><code>&lt;span class="badge-kit"&gt;Default&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--info"&gt;Info&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--success"&gt;Success&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--warning"&gt;Warning&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--error"&gt;Error&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--outline"&gt;Outline&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--solid"&gt;Solid&lt;/span&gt;
+                            &lt;span class="badge-kit badge-kit--dot badge-kit--success"&gt;
+                            &lt;span class="badge-dot"&gt;&lt;/span&gt;Active
+                            &lt;/span&gt;</code></pre>
+                </div>
+                <br>
+                <p class="asset-note mb3">
+                    Badge variants
+                </p>
+                <div class="showcase-row g2 mb3">
+                    <span class="badge-kit">Default</span>
+                    <span class="badge-kit badge-kit--info">Info</span>
+                    <span class="badge-kit badge-kit--success">Success</span>
+                    <span class="badge-kit badge-kit--warning">Warning</span>
+                    <span class="badge-kit badge-kit--error">Error</span>
+                    <span class="badge-kit badge-kit--outline">Outline</span>
+                    <span class="badge-kit badge-kit--solid">Solid</span>
+                    <span class="badge-kit badge-kit--dot badge-kit--success"><span
+                            class="badge-dot"></span>Active</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="toast-kit" id="toast-kit" role="status" aria-live="polite"></div>
+    </main>
+
+    <aira-footer></aira-footer>
+
+</body>
+
+</html>
