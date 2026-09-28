@@ -1,5 +1,5 @@
 /* ============================================================
-   UI Toolkit: comportamento dos componentes
+   UI Toolkit: component functions
    ============================================================ */
 
 /* --------------------------------------------
@@ -183,8 +183,48 @@ function initCheckboxes() {
 
 
 /* --------------------------------------------
-   Inicialização
+   Toggle
+   --------------------------------------------
+   Switches between two SVGs (on / off)
+   depending on the input state.
+   Expected structure:
+   .toggle-wrap
+     input[type="checkbox"]
+     .toggle-icon > .svg-on + .svg-off
+   -------------------------------------------- */
+function initToggles() {
+  function updateToggleIcon(toggle) {
+
+      //  verifies if the next element to toggle isnt null
+      //  then verifies if the same element class is "toggle-icon"
+      var icon = toggle.nextElementSibling;
+      var iconExists = icon && icon.classList.contains('toggle-icon');
+      if (!iconExists) return;
+
+      var onSvg  = icon.querySelector('.svg-on');
+      var offSvg = icon.querySelector('.svg-off');
+      //  verifies if one of the icons doesn't exist
+      if (!onSvg || !offSvg) return;
+
+      onSvg.style.display  = toggle.checked ? ''     : 'none';
+      offSvg.style.display = toggle.checked ? 'none' : '';
+  }
+
+  document.querySelectorAll('.toggle-wrap input[type="checkbox"]').forEach(function(toggle) {
+      //  first render of the toggle
+      updateToggleIcon(toggle);
+      // listener to update the toggle after
+      toggle.addEventListener('change', function() {
+          updateToggleIcon(toggle);
+      });
+  });
+}
+
+
+/* --------------------------------------------
+   Initialization
    -------------------------------------------- */
 initAccordions();
 initCarousel();
 initCheckboxes();
+initToggles();

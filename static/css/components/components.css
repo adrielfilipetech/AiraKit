@@ -628,7 +628,8 @@
 /* ------------------------------------------
    Checkbox
    ------------------------------------------ */
-.checkbox-wrap {
+.checkbox-wrap,
+.toggle-wrap {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -636,7 +637,8 @@
   user-select: none;
 }
 
-.checkbox-wrap input[type="checkbox"] {
+.checkbox-wrap input[type="checkbox"],
+.toggle-wrap input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -672,6 +674,44 @@
 }
 
 .checkbox-wrap.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ------------------------------------------
+   Toggle
+   ------------------------------------------ */
+.toggle-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-icon svg {
+  fill: var(--color-text-muted);
+  transition: fill 0.15s ease, opacity 0.15s ease;
+}
+
+.toggle-wrap input[type="checkbox"]:checked ~ .toggle-icon svg.svg-on {
+  fill: var(--color-primary);
+}
+
+.toggle-wrap input[type="checkbox"]:focus-visible ~ .toggle-icon {
+  outline: 2px solid var(--form-border-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-full);
+}
+
+.toggle-label {
+  font-size: var(--form-font-size);
+  color: var(--color-text);
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.toggle-wrap.disabled {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
