@@ -86,7 +86,7 @@ class AiraNavbar extends HTMLElement {
   // connectedCallback is part of the custom element lifecycle and is called
   // when the element is connected to the DOM. Here, it is used to initialize the element.
   connectedCallback() {
-    fetch('/components/navbar.html')
+    fetch('/AiraKit/components/navbar.html')
       .then(res => res.text())
       .then(html => {
         //Empty html recieves the html from /navbar.html
@@ -108,7 +108,7 @@ class AiraNavbar extends HTMLElement {
    -------------------------------------------- */
 class AiraFooter extends HTMLElement {
   connectedCallback() {
-    fetch('/components/footer.html')
+    fetch('/AiraKit/components/footer.html')
       .then(res => res.text())
       .then(html => {
         this.innerHTML = html;
