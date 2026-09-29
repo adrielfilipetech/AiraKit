@@ -86,7 +86,14 @@ class AiraNavbar extends HTMLElement {
   // connectedCallback is part of the custom element lifecycle and is called
   // when the element is connected to the DOM. Here, it is used to initialize the element.
   connectedCallback() {
+    // Do not use fetch() with relative paths, since relative URLs are resolved
+    // relative to the page that loaded main.js, not relative to main.js itself.
+    // Example:
+    // if main.js is loaded by /pages/example.html, fetch("components/navbar.html")
+    // will try to access /pages/components/navbar.html.
+    // Unless all HTML files are located in the root directory, in which case relative paths can be used.
     fetch('/AiraKit/components/navbar.html')
+    // Change to fetch('/components/navbar.html') for the initial setup
       .then(res => res.text())
       .then(html => {
         //Empty html recieves the html from /navbar.html
@@ -108,7 +115,14 @@ class AiraNavbar extends HTMLElement {
    -------------------------------------------- */
 class AiraFooter extends HTMLElement {
   connectedCallback() {
+    // Do not use fetch() with relative paths, since relative URLs are resolved
+    // relative to the page that loaded main.js, not relative to main.js itself.
+    // Example:
+    // if main.js is loaded by /pages/example.html, fetch("components/navbar.html")
+    // will try to access /pages/components/navbar.html.
+    // Unless all HTML files are located in the root directory, in which case relative paths can be used.
     fetch('/AiraKit/components/footer.html')
+    // Change to fetch('/components/footer.html') for the initial setup
       .then(res => res.text())
       .then(html => {
         this.innerHTML = html;
