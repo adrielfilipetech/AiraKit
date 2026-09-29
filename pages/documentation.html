@@ -23,7 +23,7 @@
     <main class="main-cont">
         <div class="page-hero">
             <p class="section-label">Guide</p>
-            <h1>Usage Examples</h1>
+            <h1>Usage Examples (PAGE UNFINISHED)</h1>
         </div>
 
         <div class="assets-wrapper">
@@ -33,7 +33,232 @@
                  ============================================ -->
             <div class="asset-section">
                 <div class="asset-section-header">
-                    <h2>Setup</h2>
+                    <h2>Initial setup</h2>
+                </div>
+
+                <p class="asset-note mb3">
+                    For this guide, it will be assumed that the file and directory structure remains exactly as it was
+                    when the `.zip` file was extracted. However, feel free to reorganize the project as needed, but be
+                    mindful of the file paths.
+
+                    If you haven't already,
+                    <a href="https://github.com/adrielfilipedesign/AiraKit/archive/refs/heads/main.zip"
+                        download>download AiraKit</a>.
+
+                </p>
+                <p class="asset-note mb3">
+                    Then, copy the `components/` and `static/` directories into the root of your project. The root of
+                    your project should look something like this:
+
+                </p>
+                <div class="file-tree">
+                    <!-- components/ -->
+                    <div class="file-tree-item folder">
+                        <span class="icon">📁</span>
+                        <span>components/</span>
+                    </div>
+
+                    <div class="file-tree-children">
+                        <div class="file-tree-item file">
+                            <span class="tree-line">├──</span>
+                            <span class="icon">📄</span>
+                            <span>footer.html</span>
+                        </div>
+
+                        <div class="file-tree-item file">
+                            <span class="tree-line">└──</span>
+                            <span class="icon">📄</span>
+                            <span>navbar.html</span>
+                        </div>
+                    </div>
+                    <div class="file-tree-item folder">
+                        <span class="icon">📁</span>
+                        <span>static/</span>
+                    </div>
+
+                    <div class="file-tree-children">
+
+                        <!-- css/ -->
+                        <div class="file-tree-item folder">
+                            <span class="tree-line">├──</span>
+                            <span class="icon">📁</span>
+                            <span>css/</span>
+                        </div>
+
+                        <div class="file-tree-children">
+
+                            <!-- base/ -->
+                            <div class="file-tree-item folder">
+                                <span class="tree-line">├──</span>
+                                <span class="icon">📁</span>
+                                <span>base/</span>
+                            </div>
+
+                            <div class="file-tree-children">
+                                <div class="file-tree-item file">
+                                    <span class="tree-line">├──</span>
+                                    <span class="icon">📄</span>
+                                    <span>base.css</span>
+                                </div>
+
+                                <div class="file-tree-item file">
+                                    <span class="tree-line">├──</span>
+                                    <span class="icon">📄</span>
+                                    <span>layout.css</span>
+                                </div>
+
+                                <div class="file-tree-item file">
+                                    <span class="tree-line">└──</span>
+                                    <span class="icon">📄</span>
+                                    <span>tokens.css</span>
+                                </div>
+                            </div>
+
+                            <!-- components/ -->
+                            <div class="file-tree-item folder">
+                                <span class="tree-line">└──</span>
+                                <span class="icon">📁</span>
+                                <span>components/</span>
+                            </div>
+
+                            <div class="file-tree-children">
+                                <div class="file-tree-item file">
+                                    <span class="tree-line">└──</span>
+                                    <span class="icon">📄</span>
+                                    <span>components.css</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- fonts/ -->
+                        <div class="file-tree-item folder">
+                            <span class="tree-line">├──</span>
+                            <span class="icon">📁</span>
+                            <span>fonts/</span>
+                        </div>
+
+                        <!-- icons/ -->
+                        <div class="file-tree-item folder">
+                            <span class="tree-line">├──</span>
+                            <span class="icon">📁</span>
+                            <span>icons/</span>
+                        </div>
+
+                        <!-- img/ -->
+                        <div class="file-tree-item folder">
+                            <span class="tree-line">├──</span>
+                            <span class="icon">📁</span>
+                            <span>img/</span>
+                        </div>
+
+                        <!-- js/ -->
+                        <div class="file-tree-item folder">
+                            <span class="tree-line">└──</span>
+                            <span class="icon">📁</span>
+                            <span>js/</span>
+                        </div>
+
+                        <div class="file-tree-children">
+                            <div class="file-tree-item file">
+                                <span class="tree-line">├──</span>
+                                <span class="icon">📄</span>
+                                <span>components.js</span>
+                            </div>
+
+                            <div class="file-tree-item file">
+                                <span class="tree-line">├──</span>
+                                <span class="icon">📄</span>
+                                <span>main.js</span>
+                            </div>
+
+                            <div class="file-tree-item file">
+                                <span class="tree-line">└──</span>
+                                <span class="icon">📄</span>
+                                <span>toast.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="asset-section-header">
+                    <h2>Correcting file paths</h2>
+                </div>
+                <p class="asset-note">
+                    First of all, some AiraKit files rely on specific file paths to function correctly, specifically
+                    <code>main.js</code> and <code>base.css</code>.
+                </p>
+                <p class="asset-note mb3">
+                    If these paths are not correctly defined, some features may not work as
+                    expected. You will have to make a few changes inside these two files.
+                </p>
+                <p class="asset-note mb3">
+                    <strong>main.js:</strong>
+                </p>
+                <p class="asset-note">
+                    fetch('/AiraKit/components/navbar.html') -&gt; fetch('/components/navbar.html')
+                </p>
+                <p class="asset-note">
+                    fetch('/AiraKit/components/footer.html') -&gt; fetch('/components/footer.html')
+                </p>
+                <br>
+                <p class="asset-note mb3">
+                    <strong>base.css:</strong>
+                </p>
+                <p class="asset-note mb3">
+                    src: url('/AiraKit/static/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+                </p>
+                <p class="asset-note mb3">
+                    Change it to:
+                </p>
+
+                <p class="asset-note mb3">
+                    src: url('/static/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+                </p>
+
+                <br>
+                <div class="asset-section-header">
+                    <h2>Explanation</h2>
+                </div>
+
+                <p class="asset-note mb3">
+                    <strong> “Why not provide AiraKit with the correct paths from the start?” </strong>
+                </p>
+                <p class="asset-note mb3">
+                    I tried to do that. However, since AiraKit is hosted at
+                    `https://adrielfilipetech.github.io/AiraKit/`, the browser would try to resolve an absolute path
+                    without
+                    including `/AiraKit/`.
+
+                </p>
+                <p class="asset-note">
+                    `https://adrielfilipetech.github.io/components/navbar.html` ❌
+                </p>
+                <p class="asset-note mb3">
+                    `https://adrielfilipetech.github.io/AiraKit/components/navbar.html` ✅
+                </p>
+                <p class="asset-note mb3">
+                    As a result, it would not find the file.
+                </p>
+                <p class="asset-note mb3">
+                    <strong> “Couldn’t you have used a relative path instead, such as
+                        `fetch('components/navbar.html')`?”
+                    </strong>
+                </p>
+                <p class="asset-note mb3">
+                    If I had kept all the HTML pages in the root directory, yes. However, i did not,
+                    which creates the same problem again.
+
+                    In any case, I would still need to include a section covering the files that rely on specific paths
+                    and explaining how those paths work. This also gives me an opportunity to explain how to make these
+                    changes correctly when adapting AiraKit to your own project.
+                </p>
+                <br>
+                <br>
+                <div class="asset-section-header">
+                    <h2>Main files</h2>
                     <span>3 core files</span>
                 </div>
                 <p class="asset-note mb3">
@@ -44,19 +269,27 @@
                 <p class="asset-note mb3">
                     tokens.css -> base.css -> main.js
                 </p>
-                <div class="download-box mb3">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>index.html — &lt;head&gt;</span>
+
+                <p class="asset-note mb3">
+                    Put these three files inside of your project, then link them inside the
+                    html <code>&lt;head&gt;</code> tag, like this:
+                </p>
+
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>index.html — &lt;head&gt;</span>
+                        </div>
+                        <pre><code>
+                                &lt;/head&gt;
+                                &lt;link rel="stylesheet" href="/static/css/base/tokens.css"&gt;
+                                &lt;link rel="stylesheet" href="/static/css/base/base.css"&gt;
+                                &lt;script src="/static/js/main.js" defer&gt;&lt;/script&gt;
+                                &lt;/head&gt;
+                            </code></pre>
                     </div>
-                    <pre><code>
-                            &lt;/head&gt;
-                            &lt;link rel="stylesheet" href="/AiraKit/static/css/base/tokens.css"&gt;
-                            &lt;link rel="stylesheet" href="/AiraKit/static/css/base/base.css"&gt;
-                            &lt;script src="/AiraKit/static/js/main.js" defer&gt;&lt;/script&gt;
-                            &lt;/head&gt;
-                        </code></pre>
-                </div>
+                </section>
                 <p class="asset-note mt3 mb3">
                     <strong>Tokens.css:</strong> Color scheme, spacing, radii and typography for the whole kit and every
                     component.
@@ -72,21 +305,44 @@
                     <code>&lt;aira-navbar&gt;</code> / <code>&lt;aira-footer&gt;</code> web components.
                 </p>
 
+                <p class="asset-note mt3 mb3">
+                    You will also find a file called "layout.css". You can skip it, it defines css for the AiraKit
+                    website.
+                </p>
+
                 <br>
                 <div class="asset-section-header">
-                    <h2>Base html structure</h2>
+                    <h2>Base HTML structure</h2>
                     <span>navbar · main · footer</span>
                 </div>
                 <p class="asset-note mb3">
-                    Every page follows the same 3-part skeleton inside the <code>&lt;body&gt;</code> tag:
-                    <strong>Navbar</strong> - <strong>Main</strong> - <strong>Footer</strong>
+                    AiraKit provides a base HTML structure that includes a navbar, a main body and a footer. All of them
+                    should be used inside the <code>&lt;body&gt;</code> tag.
                 </p>
                 <p class="asset-note mb3">
-                    Each piece is independent — a page can drop the navbar, the footer, or both, and the layout
-                    still holds, since the <code>&lt;main&gt;</code> tag with <code>.main-cont</code> attribute always
-                    stretches to fill
-                    whatever space is left.
+                    The <code>&lt;main&gt;</code> tag should always be present, while the navbar and footer are
+                    optional, since the <code>&lt;main&gt;</code> tag with <code>.main-cont</code> attribute always
+                    stretches to fill whatever space is left.
                 </p>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>index.html — &lt;body&gt;</span>
+                        </div>
+                        <pre><code>
+                                &lt;body&gt;
+                                &lt;aira-navbar&gt;&lt;/aira-navbar&gt;
+
+                                &lt;main class="main-cont"&gt;
+                                &lt;!-- page content --&gt;
+                                &lt;/main&gt;
+
+                                &lt;aira-footer&gt;&lt;/aira-footer&gt;
+                                &lt;/body&gt;
+                            </code></pre>
+                    </div>
+                </section>
                 <p class="asset-note mt3 mb3">
                     <strong>&lt;aira-navbar&gt;:</strong> Injected by <code>main.js</code>. Fixed at the top of
                     the page, holds the logo, the theme toggle and the nav links.
@@ -100,24 +356,561 @@
                     <strong>&lt;aira-footer&gt;:</strong> Injected by <code>main.js</code>. Sits at the bottom
                     of the page with links and credits.
                 </p>
-                <div class="download-box mb3">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>index.html — &lt;body&gt;</span>
-                    </div>
-                    <pre><code>
-                            &lt;body&gt;
-                            &lt;aira-navbar&gt;&lt;/aira-navbar&gt;
 
-                            &lt;main class="main-cont"&gt;
-                            &lt;!-- page content --&gt;
-                            &lt;/main&gt;
+                <br>
+                <div class="asset-section-header">
+                    <h2>Using CSS tags</h2>
+                    <span>base.css</span>
+                </div>
+                <p class="asset-note mt3 mb3">
+                    All the utility classes live in <code>base.css</code> (which depends on <code>tokens.css</code>).
+                    Add them straight to any HTML tag and combine as many as you need — there is no extra CSS to write.
+                </p>
+                <p class="asset-note mt3 mb3">
+                    Spacing classes follow the same scale everywhere: <code>1</code> = <code>3rem</code>, <code>2</code>
+                    = <code>2rem</code> and <code>3</code> = <code>1rem</code>. So <code>.p1</code> is the biggest
+                    padding and <code>.p3</code> the smallest.
+                </p>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Layout</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.cont</code></td>
+                            <td>Centered flex container with max-width 1200px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.cont-narrow</code></td>
+                            <td>Container with max-width 800px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.cont-wide</code></td>
+                            <td>Container with max-width 1400px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.row</code></td>
+                            <td>Flex row with wrapping</td>
+                        </tr>
+                        <tr>
+                            <td><code>.col</code></td>
+                            <td>Flex column</td>
+                        </tr>
+                        <tr>
+                            <td><code>.centv</code></td>
+                            <td>Align items center (vertical)</td>
+                        </tr>
+                        <tr>
+                            <td><code>.centh</code></td>
+                            <td>Justify content center (horizontal)</td>
+                        </tr>
+                        <tr>
+                            <td><code>.centvh</code></td>
+                            <td>Center both axes</td>
+                        </tr>
+                        <tr>
+                            <td><code>.full-width</code></td>
+                            <td>Breaks out of the grid to full width</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                            &lt;aira-footer&gt;&lt;/aira-footer&gt;
-                            &lt;/body&gt;
-                        </code></pre>
+                <br>
+                <br>
+                <div class="asset-section-header">
+                    <h2>More details</h2>
                 </div>
 
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Main content container</h2>
+                </div>
+                <p class="asset-note mb3">
+                    Use the <code>.cont</code> class and its variants to create a constrained-width container centered
+                    on the page, where the content will be displayed.
+                </p>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — layout</span>
+                        </div>
+                        <pre><code>
+                                &lt;main class="main-cont"&gt;
+
+                                &lt;div class="cont-narrow"&gt;
+                                &lt;div style="background: rgba(255, 150, 0, 0.2);"&gt;
+                                &lt;h2&gt;width of 'cont-narrow' class&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(0, 200, 100, 0.2);"&gt;
+                                &lt;h2&gt;width of 'cont' class (default size)&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="cont-wide"&gt;
+                                &lt;div style="background: rgba(0, 128, 255, 0.2);"&gt;
+                                &lt;h2&gt;width of 'cont-wide' class&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont-wide"&gt;
+                                &lt;div style="background: rgba(255, 255, 255, 0.2);"&gt;
+                                &lt;h2&gt;This grey section is inside a 'cont-wide' class. This specific line does not
+                                have a 'full-width'
+                                class&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;div class="full-width" style="background: rgba(255, 255, 255, 0.2);"&gt;
+                                &lt;h2&gt;This line has 'full-width' class. As you can see, the full-width will ignore
+                                the grid and expand
+                                to fill the whole screen&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;/main&gt;
+                            </code></pre>
+                    </div>
+
+                </section>
+
+                <br>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Centering text</h2>
+                </div>
+
+                <p class="asset-note mb3">
+                    Use the following classes to modify text position:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.txtc</code></td>
+                            <td>Centers the text</td>
+                        </tr>
+                        <tr>
+                            <td><code>.txtl</code></td>
+                            <td>Aligns the text to the left</td>
+                        </tr>
+                        <tr>
+                            <td><code>.txtr</code></td>
+                            <td>Aligns the text to the right</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — layout</span>
+                        </div>
+                        <pre><code>
+                                &lt;main class="main-cont"&gt;
+
+                                &lt;div class="cont txtc"&gt;
+                                &lt;div style="background: rgba(0, 200, 100, 0.2);"&gt;
+                                &lt;h2&gt;Text centered using 'txtc' class&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="cont txtl"&gt;
+                                &lt;div style="background: rgba(255, 150, 0, 0.2);"&gt;
+                                &lt;h2&gt;Text aligned left using 'txtl' class&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="cont txtr"&gt;
+                                &lt;div style="background: rgba(0, 128, 255, 0.2);"&gt;
+                                &lt;h2&gt;Text aligned right using 'txtr' class&lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;/main&gt;
+                            </code></pre>
+                    </div>
+                </section>
+
+                <br>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Rows, columns, gaps and relative center</h2>
+                </div>
+                <p class="asset-note mb3">
+                    Use the <code>.row</code> class for a wrapping row and <code>.col</code> for a column inside it. Add
+                    <code>.centv</code>, <code>.centh</code> or <code>.centvh</code> class to align the content.
+                </p>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — layout</span>
+                        </div>
+                        <pre><code>
+                                &lt;main class="main-cont"&gt;
+
+                                &lt;h3 class="txtc"&gt;centh — horizontal&lt;/h3&gt;
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(0, 200, 100, 0.2); padding: 1rem;"&gt;
+                                &lt;h3&gt;&lt;/h3&gt;
+
+                                &lt;div class="centh" style="min-height: 100px;"&gt;
+                                &lt;div&gt;Centered horizontally&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;h3 class="txtc"&gt;centv — vertical&lt;/h3&gt;
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(255, 150, 0, 0.2); padding: 1rem;"&gt;
+
+                                &lt;div class="centv" style="min-height: 100px;"&gt;
+                                &lt;div&gt;Centered vertically&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;h3 class="txtc"&gt;centvh — both axes&lt;/h3&gt;
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(0, 128, 255, 0.2); padding: 1rem;"&gt;
+
+                                &lt;div class="centvh" style="min-height: 100px;"&gt;
+                                &lt;div&gt;Centered horizontally and vertically&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;/main&gt;
+                            </code></pre>
+                    </div>
+                </section>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Padding, margin and gap</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Padding</th>
+                            <th>Margin</th>
+                            <th>Gap</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>1</code></td>
+                            <td><code>.p1</code></td>
+                            <td><code>.m1</code></td>
+                            <td><code>.g1</code></td>
+                            <td>3rem</td>
+                        </tr>
+                        <tr>
+                            <td><code>2</code></td>
+                            <td><code>.p2</code></td>
+                            <td><code>.m2</code></td>
+                            <td><code>.g2</code></td>
+                            <td>2rem</td>
+                        </tr>
+                        <tr>
+                            <td><code>3</code></td>
+                            <td><code>.p3</code></td>
+                            <td><code>.m3</code></td>
+                            <td><code>.g3</code></td>
+                            <td>1rem</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <p class="asset-note mb3">
+                    All of them have 3 values, being 1 the biggest size (3 rem) and 3 being the smallest size (1 rem).
+                </p>
+                <p class="asset-note mb3">
+                    To target a single side, add its letter: <code>t</code> (top), <code>b</code> (bottom),
+                    <code>l</code> (left) or <code>r</code> (right) — for example <code>.pt1</code>, <code>.mb3</code>,
+                    <code>.ml2</code> or <code>.pr3</code>.
+                </p>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — spacing</span>
+                        </div>
+                        <pre><code>
+                                &lt;main class="main-cont"&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(0, 200, 100, 0.2);"&gt;
+                                &lt;div class="p2" style="background: rgba(0, 200, 100, 0.2);"&gt;
+                                &lt;strong&gt;p2&lt;/strong&gt; — 2rem padding on every side
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(255, 150, 0, 0.2);"&gt;
+                                &lt;div class="pt1 pb3" style="background: rgba(255, 150, 0, 0.2);"&gt;
+                                &lt;strong&gt;pt1 pb3&lt;/strong&gt; — 3rem padding on top, 1rem padding at the bottom
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(0, 128, 255, 0.2); padding: 1rem;"&gt;
+                                &lt;h2 class="mb3"&gt;Title&lt;/h2&gt;
+                                &lt;p class="mt2"&gt;Paragraph has a margin (mt2) on top of it&lt;/p&gt;
+                                &lt;p&gt;And the title itself has a margin of mb3 at the bottom.&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(180, 80, 220, 0.2); padding: 1rem;"&gt;
+                                &lt;p&gt;The text "Left" has a margin at its right side (mr3)&lt;/p&gt;
+                                &lt;br&gt;
+                                &lt;span class="mr3"&gt;LEFT&lt;/span&gt;
+                                &lt;span&gt;RIGHT&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div style="background: rgba(255, 100, 100, 0.2); padding: 1rem;"&gt;
+                                &lt;p&gt;The list items have a gap (g3) between each other&lt;/p&gt;
+                                &lt;br&gt;
+                                &lt;ul class="col g3"&gt;
+                                &lt;li&gt;One&lt;/li&gt;
+                                &lt;li&gt;Two&lt;/li&gt;
+                                &lt;li&gt;Three&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;/main&gt;
+                            </code></pre>
+                    </div>
+                </section>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Borders</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Side</th>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>All sides</td>
+                            <td><code>.b</code></td>
+                            <td>Border on all sides</td>
+                        </tr>
+                        <tr>
+                            <td>Top</td>
+                            <td><code>.bt</code></td>
+                            <td>Border on the top side</td>
+                        </tr>
+                        <tr>
+                            <td>Bottom</td>
+                            <td><code>.bb</code></td>
+                            <td>Border on the bottom side</td>
+                        </tr>
+                        <tr>
+                            <td>Left</td>
+                            <td><code>.bl</code></td>
+                            <td>Border on the left side</td>
+                        </tr>
+                        <tr>
+                            <td>Right</td>
+                            <td><code>.br</code></td>
+                            <td>Border on the right side</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <p class="asset-note mb3">
+                    <code>.b</code> draws a border on all sides. Use <code>.bt</code>, <code>.bb</code>,
+                    <code>.bl</code> or <code>.br</code> for a single side — handy for dividers.
+                </p>
+                <br>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — borders</span>
+                        </div>
+                        <pre><code>
+                                &lt;main class="main-cont"&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div&gt;
+                                &lt;div class="b p2" style="background: rgba(0, 200, 100, 0.2);"&gt;
+                                The &lt;strong&gt;b&lt;/strong&gt; class adds a border on all sides
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div&gt;
+                                &lt;h3 class="bb pb3" style="background: rgba(255, 150, 0, 0.2);"&gt;
+                                Section title
+                                &lt;/h3&gt;
+                                &lt;p&gt;The &lt;strong&gt;bb&lt;/strong&gt; class adds a border below the
+                                title.&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;br&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;div&gt;
+                                &lt;blockquote class="bl pl2" style="background: rgba(0, 128, 255, 0.2);"&gt;
+                                The &lt;strong&gt;bl&lt;/strong&gt; class adds a border left of the quote.
+                                &lt;/blockquote
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;/main&gt;
+                            </code></pre>
+                    </div>
+                </section>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Images</h2>
+                </div>
+                <p class="asset-note mb3">
+                    Image classes only set a <code>max-width</code>, so the image keeps its proportions:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Class</th>
+                            <th>Max-width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Extra small</td>
+                            <td><code>.img-xs</code></td>
+                            <td>60px</td>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td><code>.img-sm</code></td>
+                            <td>100px</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td><code>.img-md</code></td>
+                            <td>160px</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            <td><code>.img-lg</code></td>
+                            <td>240px</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — images</span>
+                        </div>
+                        <pre><code>
+                                &lt;main class="main-cont"&gt;
+
+                                &lt;div class="cont"&gt;
+                                &lt;h3&gt;Image size: 60px&lt;/h3&gt;
+                                &lt;img class="img-xs" src="/static/img/image.jpg" alt="Extra small"&gt;
+
+                                &lt;h3&gt;Image size: 100px&lt;/h3&gt;
+                                &lt;img class="img-sm" src="/static/img/image.jpg" alt="Small"&gt;
+
+                                &lt;h3&gt;Image size: 160px&lt;/h3&gt;
+                                &lt;img class="img-md" src="/static/img/image.jpg" alt="Medium"&gt;
+
+                                &lt;h3&gt;Image size: 240px&lt;/h3&gt;
+                                &lt;img class="img-lg" src="/static/img/image.jpg" alt="Large"&gt;
+                                &lt;/div&gt;
+
+                                &lt;/main&gt;
+                            </code></pre>
+                    </div>
+                </section>
+                <br>
+                <div class="asset-section-header asset-section-header--plain mb3">
+                    <h2 class="asset-subheading">Putting it all together</h2>
+                </div>
+                <p class="asset-note mb3">
+                    Utility classes are meant to be stacked. This is a complete profile card built only with the classes
+                    above:
+                </p>
+                <section class="download-section-2" id="download">
+                    <div class="download-box mb3">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example — profile card</span>
+                        </div>
+                        <pre><code>&lt;main class="main-cont"&gt;
+                                &lt;section class="cont cont-narrow centvh g2 p2"&gt;
+
+                                &lt;div class="b p2"&gt;
+                                &lt;div class="row centv g3 mb3"&gt;
+                                &lt;img class="img-sm" src="/static/icons/ui/human.svg" alt="Avatar"&gt;
+                                &lt;div class="col g3"&gt;
+                                &lt;h2&gt;Adriel Filipe&lt;/h2&gt;
+                                &lt;span&gt;Design &amp;amp; Development&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;p class="bt pt3 txtl"&gt;
+                                Building lightweight tools for developers.
+                                &lt;/p&gt;
+                                &lt;/div&gt;
+
+                                &lt;/section&gt;
+                                &lt;/main&gt;</code></pre>
+                    </div>
+                </section>
                 <br>
                 <div class="asset-section-header">
                     <h2>Using components</h2>
@@ -127,23 +920,30 @@
                 </p>
                 <p class="asset-note mt3 mb3">
                     Also make sure to include <code>components.js</code> when using accordions, carrousel, checkboxes,
-                    toggle buttons or
-                    <code>toast.js</code> for the toasts.
+                    toggle buttons. Include <code>toast.js</code> for the toasts.
                 </p>
 
-                <div class="download-box">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>index.html — components layer (optional)</span>
+                <section class="download-section-2" id="download">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>index.html — components layer (optional)</span>
+                        </div>
+                        <pre><code>
+                                &lt;/head&gt;
+                                &lt;link rel="stylesheet" href="/static/css/base/tokens.css"&gt;
+                                &lt;link rel="stylesheet" href="/static/css/base/base.css"&gt;
+
+                                &lt;link rel="stylesheet" href="/static/css/components/components.css"&gt;
+
+                                &lt;script src="/static/js/main.js" defer&gt;&lt;/script&gt;
+
+                                &lt;script src="/static/js/components.js" defer&gt;&lt;/script&gt;
+                                &lt;script src="/static/js/toast.js" defer&gt;&lt;/script&gt;
+                                &lt;/head&gt;
+                            </code></pre>
                     </div>
-                    <pre><code>
-                            &lt;/head&gt;
-                            &lt;link rel="stylesheet" href="/AiraKit/static/css/components/components.css"&gt;
-                            &lt;script src="/AiraKit/static/js/components.js" defer&gt;&lt;/script&gt;
-                            &lt;script src="/AiraKit/static/js/toast.js" defer&gt;&lt;/script&gt;
-                            &lt;/head&gt;
-                        </code></pre>
-                </div>
+                </section>
             </div>
             <!-- ============================================
                  BUTTONS
@@ -159,16 +959,22 @@
                     <code>&lt;button&gt;</code> tag:
                 </p>
 
-                <div class="download-box">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>example</span>
+                <section class="download-section-2" id="download">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example</span>
+                        </div>
+                        <pre><code>
+
+                                &lt;main class="main-cont centvh g3"&gt;
+                                &lt;a href="/" class="btn_act"&gt;Get Started&lt;/a&gt;
+                                &lt;button class="btn_del" onclick="deleteItem()"&gt;Delete&lt;/button&gt;
+                                &lt;/main&gt;
+
+                            </code></pre>
                     </div>
-                    <pre><code>
-                            &lt;a href="/get-started" class="btn_act"&gt;Get Started&lt;/a&gt;
-                            &lt;button class="btn_del" onclick="deleteItem()"&gt;Delete&lt;/button&gt;
-                        </code></pre>
-                </div>
+                </section>
 
                 <br>
                 <p class="asset-note mb3">
@@ -219,14 +1025,21 @@
                     icons available. See the
                     full list on the <a href="/AiraKit/pages/assets-&-icons.html">Assets &amp; Icons</a> page.
                 </p>
-                <div class="download-box">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>example</span>
+                <section class="download-section-2" id="download">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example</span>
+                        </div>
+                        <pre><code>&lt;main class="main-cont centvh g3"&gt;
+                                &lt;a href="/" class="btn_act"&gt;Get Started&lt;/a&gt;
+                                &lt;button class="btn_del" onclick="deleteItem()"&gt;Delete&lt;/button&gt;
+                                &lt;div class="icon-card"&gt;
+                                &lt;img src="/static/icons/ui/download.svg" alt="download"&gt;
+                                &lt;/div&gt;
+                                &lt;/main&gt;</code></pre>
                     </div>
-                    <pre><code>&lt;img class="ui-icon" src="/AiraKit/static/icons/ui/download.svg" alt="download"&gt;</code>
-                    </pre>
-                </div>
+                </section>
             </div>
 
             <!-- ============================================
@@ -272,32 +1085,40 @@
                             </div>
                         </div>
 
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example</span>
+                                </div>
+                                <pre><code>
+                                        &lt;main class="main-cont"&gt;
+                                        &lt;div class="cont"&gt;
+                                        &lt;div class="col centv g3"&gt;
+                                        &lt;div class="field"&gt;
+                                        &lt;label class="field-label"&gt;Email&lt;/label&gt;
+                                        &lt;input class="input" type="text" placeholder="you@example.com" /&gt;
+                                        &lt;span class="field-hint"&gt;We'll never share your email.&lt;/span&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;!-- validation states: add .error or .success to .input --&gt;
+                                        &lt;div class="field"&gt;
+                                        &lt;label class="field-label"&gt;Email&lt;/label&gt;
+                                        &lt;input class="input error" type="text" value="not-an-email" /&gt;
+                                        &lt;span class="field-hint error"&gt;Enter a valid email address.&lt;/span&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class="field"&gt;
+                                        &lt;label class="field-label"&gt;Email&lt;/label&gt;
+                                        &lt;input class="input success" type="text" value="you@example.com" /&gt;
+                                        &lt;span class="field-hint"&gt;Looks good!&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;/main&gt;
+                                    </code></pre>
                             </div>
-                            <pre><code>
-                                    &lt;div class="field"&gt;
-                                    &lt;label class="field-label"&gt;Email&lt;/label&gt;
-                                    &lt;input class="input" type="text" placeholder="you@example.com" /&gt;
-                                    &lt;span class="field-hint"&gt;We'll never share your email.&lt;/span&gt;
-                                    &lt;/div&gt;
-
-                                    &lt;!-- validation states: add .error or .success to .input --&gt;
-                                    &lt;div class="field"&gt;
-                                    &lt;label class="field-label"&gt;Email&lt;/label&gt;
-                                    &lt;input class="input error" type="text" value="not-an-email" /&gt;
-                                    &lt;span class="field-hint error"&gt;Enter a valid email address.&lt;/span&gt;
-                                    &lt;/div&gt;
-
-                                    &lt;div class="field"&gt;
-                                    &lt;label class="field-label"&gt;Email&lt;/label&gt;
-                                    &lt;input class="input success" type="text" value="you@example.com" /&gt;
-                                    &lt;span class="field-hint"&gt;Looks good!&lt;/span&gt;
-                                    &lt;/div&gt;
-                                </code></pre>
-                        </div>
+                        </section>
                     </div>
 
                     <!-- Select -->
@@ -319,28 +1140,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example</span>
+                                </div>
+                                <pre><code>
+                                        &lt;main class="main-cont"&gt;
+                                        &lt;div class="cont"&gt;
+                                        &lt;div class="field"&gt;
+                                        &lt;label class="field-label"&gt;Country&lt;/label&gt;
+                                        &lt;div class="select-wrap"&gt;
+                                        &lt;select class="select"&gt;
+                                        &lt;option value="" disabled selected&gt;Choose an option&lt;/option&gt;
+                                        &lt;option&gt;Brazil&lt;/option&gt;
+                                        &lt;option&gt;Portugal&lt;/option&gt;
+                                        &lt;/select&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;/main&gt;
+                                    </code></pre>
                             </div>
-                            <pre><code>&lt;div class="field"&gt;
-                                    &lt;label class="field-label"&gt;Country&lt;/label&gt;
-                                    &lt;div class="select-wrap"&gt;
-                                    &lt;select class="select"&gt;
-                                    &lt;option value="" disabled selected&gt;Choose an option&lt;/option&gt;
-                                    &lt;option&gt;Brazil&lt;/option&gt;
-                                    &lt;option&gt;Portugal&lt;/option&gt;
-                                    &lt;/select&gt;
-                                    &lt;/div&gt;
-                                    &lt;/div&gt;</code></pre>
-                        </div>
+                        </section>
                     </div>
 
                     <!-- Textarea -->
                     <div>
                         <div class="asset-section-header asset-section-header--plain mb3">
-                            <h2 class="asset-subheading">Text Area</h2>
+                            <h2 class="asset-subheading">Text Area (CODE SAMPLES NOT VERIFIED AHEAD)</h2>
                         </div>
                         <div class="field-grid g3 mb3">
                             <div class="btn-item btn-item--start">
@@ -351,17 +1180,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example</span>
+                                </div>
+                                <pre><code>&lt;div class="field"&gt;
+                                        &lt;label class="field-label"&gt;Message&lt;/label&gt;
+                                        &lt;textarea class="textarea" placeholder="Write
+                                        something…"&gt;&lt;/textarea&gt;
+                                        &lt;span class="field-hint"&gt;Maximum 300 characters.&lt;/span&gt;
+                                        &lt;/div&gt;</code></pre>
                             </div>
-                            <pre><code>&lt;div class="field"&gt;
-                                    &lt;label class="field-label"&gt;Message&lt;/label&gt;
-                                    &lt;textarea class="textarea" placeholder="Write something…"&gt;&lt;/textarea&gt;
-                                    &lt;span class="field-hint"&gt;Maximum 300 characters.&lt;/span&gt;
-                                    &lt;/div&gt;</code></pre>
-                        </div>
+                        </section>
                     </div>
 
                     <!-- Checkbox -->
@@ -382,12 +1214,14 @@
 
                                     <span class="checkbox-icon" data-for="chk-terms">
                                         <svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25">
-                                            <use href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"></use>
+                                            <use href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck">
+                                            </use>
                                         </svg>
 
                                         <svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
                                             style="display:none;">
-                                            <use href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked"></use>
+                                            <use href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked">
+                                            </use>
                                         </svg>
                                     </span>
 
@@ -401,12 +1235,14 @@
 
                                     <span class="checkbox-icon" data-for="chk-terms-disabled">
                                         <svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25">
-                                            <use href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"></use>
+                                            <use href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck">
+                                            </use>
                                         </svg>
 
                                         <svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
                                             style="display:none;">
-                                            <use href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked"></use>
+                                            <use href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked">
+                                            </use>
                                         </svg>
                                     </span>
 
@@ -416,56 +1252,60 @@
 
                         </div>
                         <br>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example (structure)</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example (structure)</span>
+                                </div>
+                                <pre><code>
+                                        &lt;label class="checkbox-wrap"&gt;
+                                        &lt;input type="checkbox" id="chk-terms" /&gt;
+                                        &lt;span class="checkbox-icon" data-for="chk-terms"&gt;
+                                        &lt;svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
+                                        style="display:none;"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;/span&gt;
+                                        &lt;span class="checkbox-label"&gt;Example checkbox&lt;/span&gt;
+                                        &lt;/label&gt;
+                                    </code></pre>
                             </div>
-                            <pre><code>
-                                    &lt;label class="checkbox-wrap"&gt;
-                                    &lt;input type="checkbox" id="chk-terms" /&gt;
-                                    &lt;span class="checkbox-icon" data-for="chk-terms"&gt;
-                                    &lt;svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
-                                    style="display:none;"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;/span&gt;
-                                    &lt;span class="checkbox-label"&gt;Example checkbox&lt;/span&gt;
-                                    &lt;/label&gt;
-                                </code></pre>
-                        </div>
+                        </section>
                         <br>
                         <p class="asset-note mb3">
                             Disabled checkbox example:
                         </p>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example (disabled)</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example (disabled)</span>
+                                </div>
+                                <pre><code>
+                                        &lt;label class="checkbox-wrap disabled"&gt;
+                                        &lt;input type="checkbox" id="chk-terms-disabled" disabled /&gt;
+                                        &lt;span class="checkbox-icon" data-for="chk-terms-disabled"&gt;
+                                        &lt;svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
+                                        style="display:none;"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;/span&gt;
+                                        &lt;span class="checkbox-label"&gt;Example checkbox (disabled)&lt;/span&gt;
+                                        &lt;/label&gt;
+                                    </code></pre>
                             </div>
-                            <pre><code>
-                                    &lt;label class="checkbox-wrap disabled"&gt;
-                                    &lt;input type="checkbox" id="chk-terms-disabled" disabled /&gt;
-                                    &lt;span class="checkbox-icon" data-for="chk-terms-disabled"&gt;
-                                    &lt;svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;svg class="svg-check" width="22" height="22" viewBox="0 0 25 25"
-                                    style="display:none;"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/checkbox-checked.svg#checkbox-checked"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;/span&gt;
-                                    &lt;span class="checkbox-label"&gt;Example checkbox (disabled)&lt;/span&gt;
-                                    &lt;/label&gt;
-                                </code></pre>
-                        </div>
+                        </section>
                         <br>
                     </div>
                     <!-- Toggle -->
@@ -520,56 +1360,60 @@
 
                         </div>
                         <br>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example (structure)</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example (structure)</span>
+                                </div>
+                                <pre><code>
+                                        &lt;label class="toggle-wrap"&gt;
+                                        &lt;input type="checkbox" id="tgl-notifications" /&gt;
+                                        &lt;span class="toggle-icon" data-for="tgl-notifications"&gt;
+                                        &lt;svg class="svg-off" width="30" height="30" viewBox="0 0 25 25"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/toggle-off.svg#toggle-off"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
+                                        style="display:none;"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/toggle-on.svg#toggle-on"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;/span&gt;
+                                        &lt;span class="toggle-label"&gt;Example toggle&lt;/span&gt;
+                                        &lt;/label&gt;
+                                    </code></pre>
                             </div>
-                            <pre><code>
-                                    &lt;label class="toggle-wrap"&gt;
-                                    &lt;input type="checkbox" id="tgl-notifications" /&gt;
-                                    &lt;span class="toggle-icon" data-for="tgl-notifications"&gt;
-                                    &lt;svg class="svg-off" width="30" height="30" viewBox="0 0 25 25"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/toggle-off.svg#toggle-off"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
-                                    style="display:none;"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/toggle-on.svg#toggle-on"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;/span&gt;
-                                    &lt;span class="toggle-label"&gt;Example toggle&lt;/span&gt;
-                                    &lt;/label&gt;
-                                </code></pre>
-                        </div>
+                        </section>
                         <br>
                         <p class="asset-note mb3">
                             Disabled toggle example:
                         </p>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example (disabled)</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example (disabled)</span>
+                                </div>
+                                <pre><code>
+                                        &lt;label class="toggle-wrap disabled"&gt;
+                                        &lt;input type="checkbox" id="tgl-notifications-disabled" disabled /&gt;
+                                        &lt;span class="toggle-icon" data-for="tgl-notifications-disabled"&gt;
+                                        &lt;svg class="svg-off" width="30" height="30" viewBox="0 0 25 25"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/toggle-off.svg#toggle-off"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
+                                        style="display:none;"&gt;
+                                        &lt;use
+                                        href="/AiraKit/static/icons/ui/toggle-on.svg#toggle-on"&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                        &lt;/span&gt;
+                                        &lt;span class="toggle-label"&gt;Example toggle (disabled)&lt;/span&gt;
+                                        &lt;/label&gt;
+                                    </code></pre>
                             </div>
-                            <pre><code>
-                                    &lt;label class="toggle-wrap disabled"&gt;
-                                    &lt;input type="checkbox" id="tgl-notifications-disabled" disabled /&gt;
-                                    &lt;span class="toggle-icon" data-for="tgl-notifications-disabled"&gt;
-                                    &lt;svg class="svg-off" width="30" height="30" viewBox="0 0 25 25"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/toggle-off.svg#toggle-off"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;svg class="svg-on" width="30" height="30" viewBox="0 0 25 25"
-                                    style="display:none;"&gt;
-                                    &lt;use
-                                    href="/AiraKit/static/icons/ui/toggle-on.svg#toggle-on"&gt;&lt;/use&gt;
-                                    &lt;/svg&gt;
-                                    &lt;/span&gt;
-                                    &lt;span class="toggle-label"&gt;Example toggle (disabled)&lt;/span&gt;
-                                    &lt;/label&gt;
-                                </code></pre>
-                        </div>
+                        </section>
                         <br>
                     </div>
 
@@ -627,27 +1471,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example</span>
+                                </div>
+                                <pre><code>&lt;div class="accordion"&gt;
+                                        &lt;div class="accordion-item"&gt;
+                                        &lt;button class="accordion-trigger" aria-expanded="false"&gt;
+                                        &lt;span&gt;What is AiraKit?&lt;/span&gt;
+                                        &lt;svg class="accordion-icon" ...&gt;&lt;polyline points="6 9 12 15 18 9"
+                                        /&gt;&lt;/svg&gt;
+                                        &lt;/button&gt;
+                                        &lt;div class="accordion-body"&gt;
+                                        &lt;div class="accordion-content"&gt;
+                                        &lt;p&gt;A lightweight design kit — no build tools required.&lt;/p&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- repeat .accordion-item for each entry --&gt;
+                                        &lt;/div&gt;</code></pre>
                             </div>
-                            <pre><code>&lt;div class="accordion"&gt;
-                                    &lt;div class="accordion-item"&gt;
-                                    &lt;button class="accordion-trigger" aria-expanded="false"&gt;
-                                    &lt;span&gt;What is AiraKit?&lt;/span&gt;
-                                    &lt;svg class="accordion-icon" ...&gt;&lt;polyline points="6 9 12 15 18 9"
-                                    /&gt;&lt;/svg&gt;
-                                    &lt;/button&gt;
-                                    &lt;div class="accordion-body"&gt;
-                                    &lt;div class="accordion-content"&gt;
-                                    &lt;p&gt;A lightweight design kit — no build tools required.&lt;/p&gt;
-                                    &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;!-- repeat .accordion-item for each entry --&gt;
-                                    &lt;/div&gt;</code></pre>
-                        </div>
+                        </section>
                     </div>
 
                     <!-- Multi -->
@@ -694,27 +1540,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="download-box">
-                            <div class="download-box-header">
-                                <div class="download-box-dots"><span></span><span></span><span></span></div>
-                                <span>example</span>
+                        <section class="download-section-2" id="download">
+                            <div class="download-box">
+                                <div class="download-box-header">
+                                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                                    <span>example</span>
+                                </div>
+                                <pre><code>&lt;div class="accordion accordion--multi"&gt;
+                                        &lt;div class="accordion-item"&gt;
+                                        &lt;button class="accordion-trigger" aria-expanded="true"&gt;
+                                        &lt;span&gt;Can I open multiple?&lt;/span&gt;
+                                        &lt;svg class="accordion-icon" ...&gt;&lt;polyline points="6 9 12 15 18 9"
+                                        /&gt;&lt;/svg&gt;
+                                        &lt;/button&gt;
+                                        &lt;div class="accordion-body"&gt;
+                                        &lt;div class="accordion-content"&gt;
+                                        &lt;p&gt;Yes! Add .accordion--multi to allow multiple items open at
+                                        once.&lt;/p&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- repeat .accordion-item for each entry --&gt;
+                                        &lt;/div&gt;</code></pre>
                             </div>
-                            <pre><code>&lt;div class="accordion accordion--multi"&gt;
-                                    &lt;div class="accordion-item"&gt;
-                                    &lt;button class="accordion-trigger" aria-expanded="true"&gt;
-                                    &lt;span&gt;Can I open multiple?&lt;/span&gt;
-                                    &lt;svg class="accordion-icon" ...&gt;&lt;polyline points="6 9 12 15 18 9"
-                                    /&gt;&lt;/svg&gt;
-                                    &lt;/button&gt;
-                                    &lt;div class="accordion-body"&gt;
-                                    &lt;div class="accordion-content"&gt;
-                                    &lt;p&gt;Yes! Add .accordion--multi to allow multiple items open at once.&lt;/p&gt;
-                                    &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;!-- repeat .accordion-item for each entry --&gt;
-                                    &lt;/div&gt;</code></pre>
-                        </div>
+                        </section>
                     </div>
 
                 </div>
@@ -771,26 +1620,29 @@
                         <div class="carousel-dots" id="carousel-demo-dots"></div>
                     </div>
                 </div>
-                <div class="download-box">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>example</span>
+                <section class="download-section-2" id="download">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example</span>
+                        </div>
+                        <pre><code>&lt;div class="carousel" id="carousel-demo"&gt;
+                                &lt;div class="carousel-track"&gt;
+                                &lt;div class="carousel-slide"&gt;&lt;div class="carousel-slide-inner"&gt;
+                                &lt;span class="carousel-slide-num"&gt;01&lt;/span&gt;
+                                &lt;p&gt;Slide content goes here.&lt;/p&gt;
+                                &lt;/div&gt;&lt;/div&gt;
+                                &lt;!-- repeat .carousel-slide for each slide --&gt;
+                                &lt;/div&gt;
+                                &lt;button class="carousel-btn carousel-btn--prev"
+                                aria-label="Previous"&gt;...&lt;/button&gt;
+                                &lt;button class="carousel-btn carousel-btn--next"
+                                aria-label="Next"&gt;...&lt;/button&gt;
+                                &lt;!-- leave empty — components.js fills this with .carousel-dot buttons --&gt;
+                                &lt;div class="carousel-dots" id="carousel-demo-dots"&gt;&lt;/div&gt;
+                                &lt;/div&gt;</code></pre>
                     </div>
-                    <pre><code>&lt;div class="carousel" id="carousel-demo"&gt;
-                            &lt;div class="carousel-track"&gt;
-                            &lt;div class="carousel-slide"&gt;&lt;div class="carousel-slide-inner"&gt;
-                            &lt;span class="carousel-slide-num"&gt;01&lt;/span&gt;
-                            &lt;p&gt;Slide content goes here.&lt;/p&gt;
-                            &lt;/div&gt;&lt;/div&gt;
-                            &lt;!-- repeat .carousel-slide for each slide --&gt;
-                            &lt;/div&gt;
-                            &lt;button class="carousel-btn carousel-btn--prev"
-                            aria-label="Previous"&gt;...&lt;/button&gt;
-                            &lt;button class="carousel-btn carousel-btn--next" aria-label="Next"&gt;...&lt;/button&gt;
-                            &lt;!-- leave empty — components.js fills this with .carousel-dot buttons --&gt;
-                            &lt;div class="carousel-dots" id="carousel-demo-dots"&gt;&lt;/div&gt;
-                            &lt;/div&gt;</code></pre>
-                </div>
+                </section>
             </div>
 
             <!-- ============================================
@@ -811,19 +1663,22 @@
                     `toast.js` to locate the div.
 
                 </p>
-                <div class="download-box">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>example</span>
-                    </div>
-                    <pre><code>&lt;!-- once per page --&gt;
-                            &lt;div class="toast-kit" id="toast-kit" role="status" aria-live="polite"&gt;&lt;/div&gt;
+                <section class="download-section-2" id="download">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example</span>
+                        </div>
+                        <pre><code>&lt;!-- once per page --&gt;
+                                &lt;div class="toast-kit" id="toast-kit" role="status"
+                                aria-live="polite"&gt;&lt;/div&gt;
 
-                            &lt;!-- anywhere in your JS --&gt;
-                            &lt;button class="btn_out" onclick="showToastKit('Action completed!', 'success')"&gt;
-                            Save
-                            &lt;/button&gt;</code></pre>
-                </div>
+                                &lt;!-- anywhere in your JS --&gt;
+                                &lt;button class="btn_out" onclick="showToastKit('Action completed!', 'success')"&gt;
+                                Save
+                                &lt;/button&gt;</code></pre>
+                    </div>
+                </section>
 
                 <br>
                 <p class="asset-note mb3">
@@ -862,22 +1717,24 @@
                     Base class plus a modifier. Combine <code>--dot</code> with a color modifier
                     (e.g. <code>--dot --success</code>) for a status indicator.
                 </p>
-                <div class="download-box">
-                    <div class="download-box-header">
-                        <div class="download-box-dots"><span></span><span></span><span></span></div>
-                        <span>example</span>
+                <section class="download-section-2" id="download">
+                    <div class="download-box">
+                        <div class="download-box-header">
+                            <div class="download-box-dots"><span></span><span></span><span></span></div>
+                            <span>example</span>
+                        </div>
+                        <pre><code>&lt;span class="badge-kit"&gt;Default&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--info"&gt;Info&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--success"&gt;Success&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--warning"&gt;Warning&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--error"&gt;Error&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--outline"&gt;Outline&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--solid"&gt;Solid&lt;/span&gt;
+                                &lt;span class="badge-kit badge-kit--dot badge-kit--success"&gt;
+                                &lt;span class="badge-dot"&gt;&lt;/span&gt;Active
+                                &lt;/span&gt;</code></pre>
                     </div>
-                    <pre><code>&lt;span class="badge-kit"&gt;Default&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--info"&gt;Info&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--success"&gt;Success&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--warning"&gt;Warning&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--error"&gt;Error&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--outline"&gt;Outline&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--solid"&gt;Solid&lt;/span&gt;
-                            &lt;span class="badge-kit badge-kit--dot badge-kit--success"&gt;
-                            &lt;span class="badge-dot"&gt;&lt;/span&gt;Active
-                            &lt;/span&gt;</code></pre>
-                </div>
+                </section>
                 <br>
                 <p class="asset-note mb3">
                     Badge variants
