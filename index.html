@@ -10,8 +10,12 @@
 
     <link rel="stylesheet" href="/AiraKit/static/css/components/components.css">
 
+    <link rel="stylesheet" href="/AiraKit/static/css/base/syntax.css">
+    <script src="/AiraKit/static/js/examples.js" type="text/javascript" defer></script>
+
     <link rel="icon" href="/AiraKit/static/img/logo-icon.svg">
     <script src="/AiraKit/static/js/main.js" defer></script>
+    <script src="/AiraKit/static/js/toast.js" defer></script>
     <title>AiraKit - A simple way to build web interfaces</title>
 
 </head>
@@ -117,45 +121,18 @@
             <h2>Add it to your project.</h2>
             <p>Download the kit and link the CSS in your HTML. No installation needed.</p>
 
-            <div class="download-box">
-                <div class="download-box-header">
-                    <div class="download-box-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <span>example.html</span>
+            <div class="download-box has-copy">
+                <div class="download-box-header centvh" style="height: 45px;">
+                    <div class="download-box-dots"><span></span><span></span><span></span></div>
+                    <button type="button" class="copy-btn" aria-label="Copy code" title="Copy code">
+
+                        <div class="icon-card" style="padding: 6px; border: none;">
+                            <img class="copy-btn-icon" src="/AiraKit/static/icons/ui/copy.svg" alt="">
+                        </div>
+                    </button>
                 </div>
-<pre><code>
-&lt;head&gt;
-
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;link rel="stylesheet" href="/static/css/base/base.css"&gt;
-    &lt;link rel="stylesheet" href="/static/css/base/tokens.css"&gt;
-    &lt;link rel="stylesheet" href="/static/css/base/layout.css"&gt;
-
-    &lt;link rel="stylesheet" href="/static/css/components/components.css"&gt;
-
-    &lt;script src="/static/js/main.js" defer&gt;&lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-
-    &lt;aira-navbar&gt;&lt;/aira-navbar&gt;
-
-    &lt;main class="main-cont"&gt;
-        &lt;!-- Then use classes anywhere --&gt;
-        &lt;div class="hero"&gt;
-            &lt;h1&gt;Hello from AiraKit&lt;/h1&gt;
-            &lt;div class="hero-actions"&gt;
-                &lt;a href="/index.html" class="btn_act"&gt;Get Started&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/main&gt;
-
-    &lt;aira-footer&gt;&lt;/aira-footer&gt;
-
-&lt;/body&gt;
-</code></pre>
+                <pre><code data-example="/AiraKit/static/examples/00-first-example.html" data-highlight="html"></code>
+                </pre>
             </div>
 
             <div class="download-actions">
@@ -174,6 +151,7 @@
             </div>
         </section>
 
+        <div class="toast-kit" id="toast-kit" role="status" aria-live="polite"></div>
     </main>
     <aira-footer></aira-footer>
 
