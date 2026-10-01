@@ -154,7 +154,7 @@ To use components, always include `components.css`. Also include `components.js`
 - **Toast:** default, success, error and warning
 - **Badge:** 8 variants, including a status dot
 
-For more details and usage examples, go to [components.md](components.md).
+For more details and usage examples, go to [components.md](COMPONENTS.md).
 
 ---
 
