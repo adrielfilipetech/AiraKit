@@ -34,6 +34,22 @@ Every project that uses AiraKit must always load these three files, in this orde
 
 `layout.css` and `syntax.css` only style the AiraKit website. You can skip them.
 
+
+If you intend to use any component, always include components.css file. Some of them might require components.js file to work properly. For the toast component to work, include toast.js file. 
+
+```html
+<head>
+    <link rel="stylesheet" href="/static/css/base/tokens.css">
+    <link rel="stylesheet" href="/static/css/base/base.css">
+
+    <link rel="stylesheet" href="/static/css/components/components.css">
+
+    <script src="/static/js/main.js" defer></script>
+
+    <script src="/static/js/components.js" defer></script>
+    <script src="/static/js/toast.js" defer></script>
+</head>
+```
 ---
 
 ## Base HTML structure
