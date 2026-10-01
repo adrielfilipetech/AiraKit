@@ -1,0 +1,47 @@
+<!-- include components.js script inside the <head> tag -->
+
+<!--
+<script src="/static/js/components.js" defer></script>
+-->
+
+<div class="cont">
+    <div class="carousel" id="carousel-demo">
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <div class="carousel-slide-inner">
+                    <span class="carousel-slide-num">01</span>
+                    <p>Drag or use the arrows to navigate between slides.</p>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <div class="carousel-slide-inner">
+                    <img src="/static/img/image.jpg" alt="Example image">
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <div class="carousel-slide-inner">
+                    <span class="carousel-slide-num">03</span>
+                    <p>Dots update automatically as you navigate.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+
+        <button class="carousel-btn carousel-btn--next" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+        </button>
+
+        <div class="carousel-dots" id="carousel-demo-dots"></div>
+    </div>
+</div>

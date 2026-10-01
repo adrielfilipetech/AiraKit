@@ -1,0 +1,18 @@
+/* Syntax highlighting for <code data-highlight="html">
+   Uses light-dark(), the same mechanism as tokens.css, so the colors follow
+   the active theme (color-scheme on :root) with no extra selectors.
+   light-dark(<light theme>, <dark theme>) */
+
+code[data-highlight] {
+    --tok-comment: light-dark(#155e30, #6a9955);
+    --tok-punct:   light-dark(#52525b, #808080);
+    --tok-tag:     light-dark(#1e40af, #4fa3e0);
+    --tok-attr:    light-dark(#5b21b6, #9cdcfe);
+    --tok-string:  light-dark(#9a3412, #ce9178);
+}
+
+code[data-highlight] .tok-comment { color: var(--tok-comment); font-style: italic; }
+code[data-highlight] .tok-punct   { color: var(--tok-punct); }
+code[data-highlight] .tok-tag     { color: var(--tok-tag); }
+code[data-highlight] .tok-attr    { color: var(--tok-attr); }
+code[data-highlight] .tok-string  { color: var(--tok-string); }

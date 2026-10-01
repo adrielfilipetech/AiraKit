@@ -1,0 +1,41 @@
+<!-- include components.js script inside the <head> tag -->
+
+<!--
+<script src="/static/js/components.js" defer></script>
+-->
+
+<div class="col centvh g3">
+    <!-- Enabled checkbox -->
+    <label class="checkbox-wrap">
+        <input type="checkbox" id="chk-terms" />
+
+        <span class="checkbox-icon" data-for="chk-terms">
+            <svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25">
+                <use href="/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"></use>
+            </svg>
+
+            <svg class="svg-check" width="22" height="22" viewBox="0 0 25 25" style="display:none;">
+                <use href="/static/icons/ui/checkbox-checked.svg#checkbox-checked"></use>
+            </svg>
+        </span>
+
+        <span class="checkbox-label">Example checkbox</span>
+    </label>
+
+    <!-- Disabled checkbox -->
+    <label class="checkbox-wrap disabled">
+        <input type="checkbox" id="chk-terms-disabled" disabled />
+
+        <span class="checkbox-icon" data-for="chk-terms-disabled">
+            <svg class="svg-uncheck" width="22" height="22" viewBox="0 0 25 25">
+                <use href="/static/icons/ui/checkbox-uncheck.svg#checkbox-uncheck"></use>
+            </svg>
+
+            <svg class="svg-check" width="22" height="22" viewBox="0 0 25 25" style="display:none;">
+                <use href="/static/icons/ui/checkbox-checked.svg#checkbox-checked"></use>
+            </svg>
+        </span>
+
+        <span class="checkbox-label">Example checkbox (disabled)</span>
+    </label>
+</div>

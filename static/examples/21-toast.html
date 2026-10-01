@@ -1,0 +1,17 @@
+<!-- include the toast.js script inside the <head> tag -->
+
+<!--
+<script src="/static/js/toast.js" defer></script>
+-->
+
+<div class="cont centvh mt3">
+    <div class="mb3 g3 row">
+        <button class="btn_out" onclick="showToastKit('Default message', 'default')">Default</button>
+        <button class="btn_out" onclick="showToastKit('Action completed!', 'success')">Success</button>
+        <button class="btn_out" onclick="showToastKit('Something went wrong.', 'error')">Error</button>
+        <button class="btn_out" onclick="showToastKit('Heads up — check this.', 'warning')">Warning</button>
+    </div>
+
+    <!-- put this anywhere, once per page -->
+    <div class="toast-kit" id="toast-kit" role="status" aria-live="polite"></div>
+</div>

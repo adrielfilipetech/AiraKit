@@ -1,0 +1,41 @@
+<!-- include components.js script inside the <head> tag -->
+
+<!--
+    <script src="/static/js/components.js" defer></script>
+-->
+
+<div class="cont g3">
+    <div class="accordion accordion--multi">
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="true">
+                <span>Can I open multiple?</span>
+                <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            </button>
+
+            <div class="accordion-body">
+                <div class="accordion-content">
+                    <p>Yes! Add <code>.accordion--multi</code> to allow multiple items open at once.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion accordion--multi">
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span>Can I open another one?</span>
+                <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            </button>
+
+            <div class="accordion-body">
+                <div class="accordion-content">
+                    <p>Yes! Multiple accordion items can remain open at the same time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

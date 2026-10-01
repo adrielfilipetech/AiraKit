@@ -1,0 +1,42 @@
+<!-- include components.js script inside the <head> tag -->
+
+<!--
+<script src="/static/js/components.js" defer></script>
+-->
+
+<div class="col centvh g3">
+    <!-- Enabled toggle -->
+    <label class="toggle-wrap">
+        <input type="checkbox" id="tgl-notifications" />
+
+        <span class="toggle-icon" data-for="tgl-notifications">
+            <svg class="svg-off" width="30" height="30" viewBox="0 0 25 25">
+                <use href="/static/icons/ui/toggle-off.svg#toggle-off"></use>
+            </svg>
+
+            <svg class="svg-on" width="30" height="30" viewBox="0 0 25 25" style="display:none;">
+                <use href="/static/icons/ui/toggle-on.svg#toggle-on"></use>
+            </svg>
+        </span>
+
+        <span class="toggle-label">Example toggle (enabled)</span>
+    </label>
+
+    <!-- Disabled toggle -->
+    <label class="toggle-wrap disabled">
+        <input type="checkbox" id="tgl-notifications-disabled" disabled />
+
+        <span class="toggle-icon" data-for="tgl-notifications-disabled">
+            <svg class="svg-off" width="30" height="30" viewBox="0 0 25 25">
+                <use href="/static/icons/ui/toggle-off.svg#toggle-off"></use>
+            </svg>
+
+            <svg class="svg-on" width="30" height="30" viewBox="0 0 25 25" style="display:none;">
+                <use href="/static/icons/ui/toggle-on.svg#toggle-on"></use>
+            </svg>
+        </span>
+
+        <span class="toggle-label">Example toggle (disabled)</span>
+    </label>
+
+</div>
